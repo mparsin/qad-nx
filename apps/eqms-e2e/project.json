@@ -1,0 +1,28 @@
+{
+  "root": "apps/eqms-e2e",
+  "sourceRoot": "apps/eqms-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/eqms-e2e/cypress.json",
+        "tsConfig": "apps/eqms-e2e/tsconfig.e2e.json",
+        "devServerTarget": "eqms:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "eqms:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/eqms-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["eqms"]
+}

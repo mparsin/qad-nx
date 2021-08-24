@@ -1,0 +1,88 @@
+{
+  "projectType": "application",
+  "root": "apps/eqms",
+  "sourceRoot": "apps/eqms/src",
+  "prefix": "eqms",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/eqms",
+        "index": "apps/eqms/src/index.html",
+        "main": "apps/eqms/src/main.ts",
+        "polyfills": "apps/eqms/src/polyfills.ts",
+        "tsConfig": "apps/eqms/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/eqms/src/favicon.ico", "apps/eqms/src/assets"],
+        "styles": ["apps/eqms/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/eqms/src/environments/environment.ts",
+              "with": "apps/eqms/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "eqms:build:production"
+        },
+        "development": {
+          "browserTarget": "eqms:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "eqms:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/eqms/src/**/*.ts", "apps/eqms/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/eqms"],
+      "options": {
+        "jestConfig": "apps/eqms/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["type:app"]
+}
