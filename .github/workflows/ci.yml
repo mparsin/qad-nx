@@ -1,0 +1,25 @@
+name: EQMS CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - *
+  workflow_dispatch:
+    branches:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup nodejs
+        uses: 'actions/setup-node@v2
+        with:
+          node-version: 14.x
+      -name: Install PNPM
+        run: npm install --global pnpm
+      -name: Install dependencies
+        run: pnpm install
+      -name: Build Angula app
+        run: pnpm build
