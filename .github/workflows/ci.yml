@@ -26,10 +26,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.node-version }}
-      - name: Install PNPM
-        run: npm install --global pnpm
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --verify-store-integrity false
+        run: npm install
 
       - name: Build Angular app
-        run: pnpm build
+        run: npm run build
