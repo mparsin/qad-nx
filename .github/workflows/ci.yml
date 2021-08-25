@@ -10,11 +10,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-  workflow_dispatch:
-    branches:
-
 jobs:
   build:
     runs-on: ubuntu-latest
