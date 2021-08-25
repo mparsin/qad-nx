@@ -10,15 +10,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
-      - name: Setup nodejs
+
+      - name: Set up Node.js ${{ env.node-version }}
         uses: 'actions/setup-node@v2
         with:
           node-version: 14.x
       -name: Install PNPM
         run: npm install --global pnpm
       -name: Install dependencies
-        run: pnpm install
-      -name: Build Angula app
+        run: pnpm install --frozen-lockfile --verify-store-integrity false
+
+      -name: Build Angular app
         run: pnpm build
