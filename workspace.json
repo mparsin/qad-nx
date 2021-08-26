@@ -30,7 +30,7 @@
     }
   },
   "projects": {
-    "eqms": "apps\\eqms",
+    "eqms": "apps/eqms",
     "eqms-e2e": "apps/eqms-e2e"
   },
   "defaultProject": "eqms"
