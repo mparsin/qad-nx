@@ -5,9 +5,24 @@ root = true
 charset = utf-8
 indent_style = space
 indent_size = 2
-insert_final_newline = false
+insert_final_newline = true
 trim_trailing_whitespace = true
+
+[*.yml]
+insert_final_newline = false
+
+[*.{css, scss}]
+quote_type = single
+
+[*.html]
+max_line_length = 120
+
+[*.{json,yaml,yml}]
+max_line_length = off
 
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false
+
+[*.ts]
+quote_type = single
