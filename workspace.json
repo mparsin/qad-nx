@@ -36,7 +36,7 @@
     "web-auth-feature": "libs/web/auth/feature",
     "web-shared-utils": "libs/web/shared/utils",
     "web-shell-feature": "libs/web/shell/feature",
-    "web-shell-ui-layout": "libs\\web\\shell\\ui\\layout"
+    "web-shell-ui-layout": "libs/web/shell/ui/layout"
   },
   "defaultProject": "eqms"
 }
