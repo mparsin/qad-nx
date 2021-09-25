@@ -16,7 +16,8 @@
         "inlineStyleLanguage": "scss",
         "assets": ["apps/eqms/src/favicon.ico", "apps/eqms/src/assets"],
         "styles": ["apps/eqms/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "preserveSymlinks": true
       },
       "configurations": {
         "production": {
