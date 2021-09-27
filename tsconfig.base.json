@@ -15,11 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@qad-nx/web/auth/data-access": [
-        "libs/web/auth/data-access/src/index.ts"
+      "@qad-nx/eqms-auth-data-access": [
+        "libs/eqms/auth/data-access/src/index.ts"
       ],
-      "@qad-nx/web/auth/feature": ["libs/web/auth/feature/src/index.ts"],
-      "@qad-nx/web/shared/utils": ["libs/web/shared/utils/src/index.ts"],
+      "@qad-nx/eqms-auth-feature": ["libs/eqms/auth/feature/src/index.ts"],
+      "@qad-nx/eqms-utils": ["libs/eqms/utils/src/index.ts"],
+      "@qad-nx/shared-animations": ["libs/shared/animations/src/index.ts"],
+      "@qad-nx/shared-assets": ["libs/shared/assets/src/index.ts"],
       "@qad-nx/web/shell/feature": ["libs/web/shell/feature/src/index.ts"],
       "@qad-nx/web/shell/ui/layout": ["libs/web/shell/ui/layout/src/index.ts"]
     }

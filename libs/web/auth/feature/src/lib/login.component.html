@@ -1,5 +1,0 @@
-<p>login works!</p>
-<label>Username</label><input [(ngModel)]='username'>
-<label>Password</label><input [(ngModel)]='password'>
-<button (click)='login()' [disabled]='isLoggingIn$ | async'>Login</button>
-<div *ngIf='isError$ | async'>Invalid username or password</div>

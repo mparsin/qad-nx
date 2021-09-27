@@ -5,18 +5,18 @@ import { webShellRoutes } from './web-shell.routes';
 import { StoreModule } from '@ngrx/store';
 import { routerReducer } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { AuthGuard } from '@qad-nx/web/shared/utils';
-import { LoginModule } from '@qad-nx/web/auth/feature';
+import { AuthGuard } from '@qad-nx/eqms-utils';
+import { LoginModule } from '@qad-nx/eqms-auth-feature';
 
 const rootReducers = {
-  router: routerReducer
+  router: routerReducer,
 };
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forRoot(webShellRoutes, {
-      scrollPositionRestoration: 'top'
+      scrollPositionRestoration: 'top',
     }),
     LoginModule,
     StoreModule.forRoot(rootReducers),
@@ -26,7 +26,6 @@ const rootReducers = {
     }),
   ],
   exports: [RouterModule],
-  providers: [AuthGuard]
+  providers: [AuthGuard],
 })
-export class WebShellModule {
-}
+export class WebShellModule {}
