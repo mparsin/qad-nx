@@ -14,8 +14,18 @@
         "polyfills": "apps/eqms/src/polyfills.ts",
         "tsConfig": "apps/eqms/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/eqms/src/favicon.ico", "apps/eqms/src/assets"],
-        "styles": ["apps/eqms/src/styles.scss"],
+        "assets": [
+          "apps/eqms/src/favicon.ico",
+          "apps/eqms/src/assets",
+          {
+            "glob": "**/*",
+            "input": "./libs/shared/assets/src",
+            "output": "./assets"
+          }],
+        "styles": [
+          "apps/eqms/src/styles/tailwind.scss",
+          "apps/eqms/src/styles.scss"
+        ],
         "scripts": [],
         "preserveSymlinks": true
       },

@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/eqms/auth/feature",
+  "sourceRoot": "libs/eqms/auth/feature/src",
+  "prefix": "qad",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/eqms/auth/feature"],
+      "options": {
+        "jestConfig": "libs/eqms/auth/feature/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/eqms/auth/feature/src/**/*.ts",
+          "libs/eqms/auth/feature/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

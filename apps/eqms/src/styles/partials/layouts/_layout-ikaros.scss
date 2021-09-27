@@ -1,0 +1,9 @@
+.fm-layout-ikaros {
+  --navigation-height: 0px;
+
+  &.fm-style-default {
+    --toolbar-background: #{$sidenav-background};
+    --navigation-color: white;
+    --toolbar-color: white;
+  }
+}

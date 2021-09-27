@@ -8,6 +8,7 @@
       "style": "scss",
       "linter": "eslint",
       "unitTestRunner": "jest",
+      "inlineStyle": true,
       "e2eTestRunner": "cypress",
       "prefix": "qad",
       "skipTests": true,
@@ -31,10 +32,12 @@
   },
   "projects": {
     "eqms": "apps/eqms",
+    "eqms-auth-data-access": "libs/eqms/auth/data-access",
+    "eqms-auth-feature": "libs/eqms/auth/feature",
     "eqms-e2e": "apps/eqms-e2e",
-    "web-auth-data-access": "libs/web/auth/data-access",
-    "web-auth-feature": "libs/web/auth/feature",
-    "web-shared-utils": "libs/web/shared/utils",
+    "eqms-utils": "libs/eqms/utils",
+    "shared-animations": "libs/shared/animations",
+    "shared-assets": "libs/shared/assets",
     "web-shell-feature": "libs/web/shell/feature",
     "web-shell-ui-layout": "libs/web/shell/ui/layout"
   },
