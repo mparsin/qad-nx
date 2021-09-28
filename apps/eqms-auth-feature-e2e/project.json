@@ -1,0 +1,28 @@
+{
+  "root": "apps/eqms-auth-feature-e2e",
+  "sourceRoot": "apps/eqms-auth-feature-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/eqms-auth-feature-e2e/cypress.json",
+        "devServerTarget": "eqms-auth-feature:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "eqms-auth-feature:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/eqms-auth-feature-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["eqms-auth-feature"]
+}

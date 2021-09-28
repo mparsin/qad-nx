@@ -13,13 +13,7 @@
         <div @scaleFadeIn *ngIf='loginInfoLoading | async'>
           <h2 class='headline m-0 text-center'>Loading...</h2>
         </div>
-        <div @scaleFadeIn *ngIf='loginInfoError | async' class='flex flex-col'>
-          <img class="w-full self-center select-none" src="/assets/images/connection_error.svg" alt="connection error" />
-          <div class='bg-warn-light border border-red px-4 py-3 rounded relative shadow' role='alert'>
-
-            <h2 class='headline m-0 text-center text-warn'>Error Loading Login Info. Please try again later</h2>
-          </div>
-        </div>
+        <qad-load-error message='Error Loading Login Info. Please try again later' *ngIf='loginInfoError | async' @scaleFadeIn class='flex flex-col'></qad-load-error>
       </ng-template>
     </div>
     <!--Login Form-->

@@ -21,7 +21,8 @@
             "glob": "**/*",
             "input": "./libs/shared/assets/src",
             "output": "./assets"
-          }],
+          }
+        ],
         "styles": [
           "apps/eqms/src/styles/tailwind.scss",
           "apps/eqms/src/styles.scss"
@@ -95,6 +96,37 @@
       "options": {
         "jestConfig": "apps/eqms/jest.config.js",
         "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "port": 4400,
+        "config": {
+          "configFolder": "apps/eqms/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/angular",
+        "outputPath": "dist/storybook/eqms",
+        "config": {
+          "configFolder": "apps/eqms/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
       }
     }
   },

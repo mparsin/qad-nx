@@ -22,6 +22,7 @@
       "@qad-nx/eqms-utils": ["libs/eqms/utils/src/index.ts"],
       "@qad-nx/shared-animations": ["libs/shared/animations/src/index.ts"],
       "@qad-nx/shared-assets": ["libs/shared/assets/src/index.ts"],
+      "@qad-nx/shared/ui/messages": ["libs/shared/ui/messages/src/index.ts"],
       "@qad-nx/web/shell/feature": ["libs/web/shell/feature/src/index.ts"],
       "@qad-nx/web/shell/ui/layout": ["libs/web/shell/ui/layout/src/index.ts"]
     }

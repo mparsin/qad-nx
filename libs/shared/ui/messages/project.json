@@ -1,14 +1,14 @@
 {
   "projectType": "library",
-  "root": "libs/eqms/auth/feature",
-  "sourceRoot": "libs/eqms/auth/feature/src",
+  "root": "libs/shared/ui/messages",
+  "sourceRoot": "libs/shared/ui/messages/src",
   "prefix": "qad",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/eqms/auth/feature"],
+      "outputs": ["coverage/libs/shared/ui/messages"],
       "options": {
-        "jestConfig": "libs/eqms/auth/feature/jest.config.js",
+        "jestConfig": "libs/shared/ui/messages/jest.config.js",
         "passWithNoTests": true
       }
     },
@@ -16,8 +16,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/eqms/auth/feature/src/**/*.ts",
-          "libs/eqms/auth/feature/src/**/*.html"
+          "libs/shared/ui/messages/src/**/*.ts",
+          "libs/shared/ui/messages/src/**/*.html"
         ]
       }
     },
@@ -27,7 +27,7 @@
         "uiFramework": "@storybook/angular",
         "port": 4400,
         "config": {
-          "configFolder": "libs/eqms/auth/feature/.storybook"
+          "configFolder": "libs/shared/ui/messages/.storybook"
         }
       },
       "configurations": {
@@ -41,9 +41,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "uiFramework": "@storybook/angular",
-        "outputPath": "dist/storybook/eqms-auth-feature",
+        "outputPath": "dist/storybook/shared-ui-messages",
         "config": {
-          "configFolder": "libs/eqms/auth/feature/.storybook"
+          "configFolder": "libs/shared/ui/messages/.storybook"
         }
       },
       "configurations": {
