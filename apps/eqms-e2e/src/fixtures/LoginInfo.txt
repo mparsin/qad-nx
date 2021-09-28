@@ -1,0 +1,7 @@
+# QAD EQMS 2021.0 Development Environment
+
+## Not intended for anyone not on the Application R&D team.
+
+Foundation Version: **4.3**
+
+Application Version: **2021.0**"

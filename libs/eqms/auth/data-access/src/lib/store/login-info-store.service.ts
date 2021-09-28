@@ -19,6 +19,7 @@ const defaultLoginInfoState: LoginInfoStateInterface = {
 export class LoginInfoStore extends ComponentStore<LoginInfoStateInterface> {
   loginInfo$ = this.select(s => s.loginInfo);
   isLoading$ = this.select(s => s.isLoading);
+  isError$ = this.select(s => s.isError);
 
   readonly loadLoginInfo = this.effect(trigger$ =>
     trigger$.pipe(

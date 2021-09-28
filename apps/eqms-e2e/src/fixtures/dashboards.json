@@ -1,0 +1,90 @@
+{
+  "id": 105,
+  "selectedPageIndex": 0,
+  "dashboardPageList": [
+    {
+      "id": 131,
+      "name": "Dashboard 1",
+      "dashboardPageIndex": 0,
+      "gadgetList": [
+        {
+          "id": 139,
+          "name": "My Approvals List",
+          "gadgetType": "",
+          "webType": "approvalslist",
+          "guid": "3d6d8382-4908-4b61-8ce9-351d1dca5e30",
+          "baseSettings": "",
+          "webSettings": "{\"sizeX\":14,\"sizeY\":6,\"minSizeX\":10,\"minSizeY\":6,\"icon\":\"bolt\",\"activeSetting\":false,\"row\":0,\"col\":0}",
+          "isLocked": false,
+          "isBusy": false,
+          "isSelfBusy": false
+        },
+        {
+          "id": 140,
+          "name": "My Assignments List",
+          "gadgetType": "",
+          "webType": "assignmentslist",
+          "guid": "ff8ab397-b96f-443f-a4b3-bb17d170a02c",
+          "baseSettings": "",
+          "webSettings": "{\"sizeX\":12,\"sizeY\":6,\"minSizeX\":10,\"minSizeY\":6,\"icon\":\"bolt\",\"activeSetting\":false,\"row\":6,\"col\":0}",
+          "isLocked": false,
+          "isBusy": false,
+          "isSelfBusy": false
+        }
+      ],
+      "isBusy": false,
+      "isSelfBusy": false
+    },
+    {
+      "id": 168,
+      "name": "Dashboard 2",
+      "dashboardPageIndex": 2,
+      "gadgetList": [
+        {
+          "id": 1599,
+          "name": "Non-conformances",
+          "gadgetType": "",
+          "webType": "metric",
+          "guid": "65912fbd-d47d-424f-9f18-49e156993548",
+          "baseSettings": "",
+          "webSettings": "{\"sizeX\":19,\"sizeY\":12,\"minSizeX\":10,\"minSizeY\":10,\"icon\":\"area-chart\",\"activeSetting\":false,\"processSystemName\":\"Nonconformances_p\",\"processIcon\":\"fa fa-puzzle-piece\",\"colorIconSrc\":\"assets/images/icons/files.png\",\"params\":{\"filter\":null,\"layout\":null,\"aggregateGroupInfo\":{},\"aggregates\":[],\"dsAggregates\":{},\"workLayoutGroup\":[],\"workLayoutSort\":[],\"searchParameters\":{\"processSystemName\":\"Nonconformances_p\",\"pageNumber\":0,\"pageSize\":10,\"groupColumn\":null,\"aggregateGroupInfo\":null,\"filterId\":null,\"layoutId\":1134,\"applyDefaultFilter\":false,\"includeLayoutMetadata\":false,\"includeProcessMetadata\":false,\"includeMetricsMetadata\":true,\"metricParameters\":\"{\\\"metricFieldSystemName\\\":\\\"RepeatCount_f\\\",\\\"groupFieldOneSystemName\\\":\\\"Site_f\\\",\\\"metricGuid\\\":\\\"1639b3a5-d193-4d23-8836-0b0a38c961a2\\\"}\",\"kpiParameters\":null,\"includekpiMetadata\":false},\"selectedMetricGuid\":\"1639b3a5-d193-4d23-8836-0b0a38c961a2\",\"selectedMetric\":null,\"chartType\":\"column\",\"showGroupBar\":true,\"showPageSize\":true,\"showPageInfo\":true,\"displayAllResults\":false,\"topXResults\":5,\"filterName\":\"Corrective Action, Initiated Within the Past Year\",\"metricName\":\"Total Repeat Issues by Site\",\"layoutName\":\"Auto Generated Layout\",\"showSearch\":false},\"canCreate\":true,\"row\":0,\"col\":0}",
+          "isLocked": false,
+          "uri": "",
+          "isBusy": false,
+          "isSelfBusy": false
+        },
+        {
+          "id": 1600,
+          "name": "Non-conformances",
+          "gadgetType": "",
+          "webType": "metric",
+          "guid": "c21f67c7-8bff-4be2-ae5b-bd49e585e348",
+          "baseSettings": "",
+          "webSettings": "{\"sizeX\":12,\"sizeY\":12,\"minSizeX\":10,\"minSizeY\":10,\"icon\":\"area-chart\",\"activeSetting\":false,\"params\":{\"filter\":null,\"layout\":null,\"aggregateGroupInfo\":{},\"aggregates\":[],\"dsAggregates\":{},\"workLayoutGroup\":[],\"workLayoutSort\":[],\"searchParameters\":{\"processSystemName\":\"Nonconformances_p\",\"pageNumber\":0,\"pageSize\":10,\"groupColumn\":null,\"aggregateGroupInfo\":null,\"filterId\":6280,\"layoutId\":1134,\"applyDefaultFilter\":false,\"includeLayoutMetadata\":false,\"includeProcessMetadata\":false,\"includeMetricsMetadata\":true,\"metricParameters\":\"{\\\"metricFieldSystemName\\\":\\\"Id\\\",\\\"groupFieldOneSystemName\\\":\\\"PastDue_f\\\",\\\"metricGuid\\\":\\\"b8629471-4c23-4bd2-abee-4b9863da92a3\\\"}\",\"kpiParameters\":null,\"includekpiMetadata\":false},\"selectedMetricGuid\":\"b8629471-4c23-4bd2-abee-4b9863da92a3\",\"selectedMetric\":null,\"chartType\":\"pie\",\"showGroupBar\":false,\"showPageSize\":false,\"showPageInfo\":false,\"displayAllResults\":true,\"topXResults\":5,\"metricName\":\"Corrective Action On-Time Completion\",\"layoutName\":\"Auto Generated Layout\",\"showSearch\":false},\"processSystemName\":\"Nonconformances_p\",\"processIcon\":\"fa fa-puzzle-piece\",\"colorIconSrc\":\"assets/images/icons/files.png\",\"canCreate\":true,\"row\":0,\"col\":19}",
+          "isLocked": false,
+          "uri": "",
+          "isBusy": false,
+          "isSelfBusy": false
+        },
+        {
+          "id": 1601,
+          "name": "Non-conformances",
+          "gadgetType": "",
+          "webType": "metric",
+          "guid": "195600cc-b102-4d9f-9b04-d3d1f320504c",
+          "baseSettings": "",
+          "webSettings": "{\"sizeX\":17,\"sizeY\":12,\"minSizeX\":10,\"minSizeY\":10,\"icon\":\"area-chart\",\"activeSetting\":false,\"params\":{\"filter\":null,\"layout\":null,\"aggregateGroupInfo\":{},\"aggregates\":[],\"dsAggregates\":{},\"workLayoutGroup\":[],\"workLayoutSort\":[],\"searchParameters\":{\"processSystemName\":\"Nonconformances_p\",\"pageNumber\":0,\"pageSize\":10,\"groupColumn\":null,\"aggregateGroupInfo\":null,\"filterId\":null,\"layoutId\":1134,\"applyDefaultFilter\":false,\"includeLayoutMetadata\":false,\"includeProcessMetadata\":false,\"includeMetricsMetadata\":true,\"metricParameters\":\"{\\\"metricFieldSystemName\\\":\\\"Id\\\",\\\"groupFieldOneSystemName\\\":\\\"Customer_f\\\",\\\"metricGuid\\\":\\\"1bf744ce-a6d7-4c0f-aa9a-2c35dd40225e\\\"}\",\"kpiParameters\":null,\"includekpiMetadata\":false},\"selectedMetricGuid\":\"1bf744ce-a6d7-4c0f-aa9a-2c35dd40225e\",\"selectedMetric\":null,\"chartType\":\"line\",\"showGroupBar\":true,\"showPageSize\":false,\"showPageInfo\":true,\"displayAllResults\":false,\"topXResults\":8,\"metricName\":\"Number of NCRs by Customer\",\"layoutName\":\"Auto Generated Layout\",\"showSearch\":false},\"processSystemName\":\"Nonconformances_p\",\"processIcon\":\"fa fa-puzzle-piece\",\"colorIconSrc\":\"assets/images/icons/files.png\",\"canCreate\":true,\"row\":0,\"col\":31}",
+          "isLocked": false,
+          "uri": "",
+          "isBusy": false,
+          "isSelfBusy": false
+        }
+      ],
+      "isBusy": false,
+      "isSelfBusy": false
+    }
+  ],
+  "isSynced": true,
+  "isBusy": false,
+  "isSelfBusy": false
+}

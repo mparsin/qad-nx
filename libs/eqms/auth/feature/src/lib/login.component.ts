@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   icVisibilityOff: Icon = icVisibilityOff;
   loginInfo$ = this.loginInfoStore.loginInfo$;
   loginInfoLoading = this.loginInfoStore.isLoading$;
+  loginInfoError = this.loginInfoStore.isError$
 
   constructor(
     private authStore: AuthStore,
