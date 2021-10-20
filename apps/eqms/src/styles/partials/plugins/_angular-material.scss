@@ -77,13 +77,13 @@ textarea.mat-input-element {
   @apply leading-normal;
 }
 
-.fm-flex-form-field {
+.qad-flex-form-field {
   .mat-form-field-infix {
     width: 50px;
   }
 }
 
-.fm-dense-form-field {
+.qad-dense-form-field {
   margin-bottom: -1.34375em;
 
   &.mat-form-field-appearance-outline {
@@ -93,7 +93,7 @@ textarea.mat-input-element {
   }
 }
 
-.fm-tabs {
+.qad-tabs {
   .mat-tab-label.mat-tab-label-active {
     opacity: 1;
   }
@@ -103,7 +103,7 @@ textarea.mat-input-element {
   }
 }
 
-.fm-tabs-dense {
+.qad-tabs-dense {
   .mat-tab-label {
     min-width: 0;
   }

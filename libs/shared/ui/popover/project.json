@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui/popover",
+  "sourceRoot": "libs/shared/ui/popover/src",
+  "prefix": "qad",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/popover"],
+      "options": {
+        "jestConfig": "libs/shared/ui/popover/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/popover/src/**/*.ts",
+          "libs/shared/ui/popover/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

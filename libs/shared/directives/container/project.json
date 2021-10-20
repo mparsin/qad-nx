@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/directives/container",
+  "sourceRoot": "libs/shared/directives/container/src",
+  "prefix": "qad",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/directives/container"],
+      "options": {
+        "jestConfig": "libs/shared/directives/container/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/directives/container/src/**/*.ts",
+          "libs/shared/directives/container/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

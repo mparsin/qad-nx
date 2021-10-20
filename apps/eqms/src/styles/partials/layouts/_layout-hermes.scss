@@ -1,20 +1,20 @@
-.fm-layout-hermes {
+.qad-layout-hermes {
   --toolbar-height: 100px;
   --secondary-toolbar-background: var(--background-base);
   --secondary-toolbar-height: 64px;
 
-  &.fm-style-light {
+  &.qad-style-light {
     --toolbar-background: var(--background-base);
   }
 
-  &.fm-style-default {
+  &.qad-style-default {
     --navigation-background: #{$sidenav-background};
     --toolbar-background: #{lighten($sidenav-background, 5)};
     --navigation-color: white;
     --toolbar-color: white;
   }
 
-  &.fm-style-dark {
+  &.qad-style-dark {
     --toolbar-background: var(--background-base);
   }
 
@@ -26,7 +26,7 @@
     }
   }
 
-  fm-secondary-toolbar .secondary-toolbar {
+  qad-secondary-toolbar .secondary-toolbar {
     @apply shadow-none -mb-gutter border-t-0;
   }
 }

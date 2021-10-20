@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1"
+	 id="Layer_1" text-rendering="geometricPrecision" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330 239"
+	 style="enable-background:new 0 0 330 239;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FAFDFF;stroke:#A7A9AC;stroke-width:3.9254;stroke-miterlimit:4.2039;}
+	.st1{fill:#FFFFFF;stroke:#A7A9AC;stroke-width:3.9254;stroke-miterlimit:4.2039;}
+	.st2{fill:#A7A9AC;stroke:#A7A9AC;stroke-width:3.9254;stroke-miterlimit:4.2039;}
+</style>
+<g id="Layer_x0020_1">
+	<path class="st0" d="M313.7,237H17.1C9.3,237,3,230.8,3,222.9V16.5C3,8.6,9.3,2.3,17.1,2.3h296.6c7.8,0,14.1,6.3,14.1,14.1v206.5
+		C327.8,230.8,321.5,237,313.7,237z"/>
+	<path class="st1" d="M15.9,2h298.6c7.1,0,12.9,5.9,12.9,12.9v18.4H2.2v-18C2.6,7.8,8.5,2,15.9,2z"/>
+	<circle class="st0" cx="306.3" cy="17.6" r="6.3"/>
+	<circle class="st0" cx="286.3" cy="17.6" r="6.3"/>
+	<circle class="st0" cx="264.3" cy="17.6" r="6.3"/>
+	<path class="st2" d="M67.6,22.3H25.7c-2,0-3.1-1.6-3.1-3.1v-3.1c0-2,1.6-3.1,3.1-3.1h41.9c2,0,3.1,1.6,3.1,3.1v3.1
+		C71.2,20.8,69.6,22.3,67.6,22.3z"/>
+	<path class="st2" d="M179.3,22.3h-41.9c-2,0-3.1-1.6-3.1-3.1v-3.1c0-2,1.6-3.1,3.1-3.1h41.9c2,0,3.1,1.6,3.1,3.1v3.1
+		C182.4,20.8,180.9,22.3,179.3,22.3z"/>
+	<path class="st2" d="M90,22.3h-5.5c-2,0-3.1-1.6-3.1-3.1v-3.1c0-2,1.6-3.1,3.1-3.1H90c2,0,3.1,1.6,3.1,3.1v3.1
+		C93.5,20.8,91.9,22.3,90,22.3z"/>
+	<path class="st2" d="M121.3,22.3h-14.9c-2,0-3.1-1.6-3.1-3.1v-3.1c0-2,1.6-3.1,3.1-3.1h14.9c1.9,0,3.1,1.6,3.1,3.1v3.1
+		C124.4,20.8,122.9,22.3,121.3,22.3z"/>
+</g>
+</svg>

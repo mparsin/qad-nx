@@ -99,7 +99,7 @@
   );
 }
 
-@function fm-elevation($zValue, $color: #523f68, $opacity: 0.3) {
+@function qad-elevation($zValue, $color: #523f68, $opacity: 0.3) {
   @if meta.type-of($zValue) != number or not math.is-unitless($zValue) {
     @error '$zValue must be a unitless number';
   }

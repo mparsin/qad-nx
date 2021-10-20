@@ -23,7 +23,7 @@ $config: mat.define-typography-config(
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$fm-primary: mat.define-palette((
+$qad-primary: mat.define-palette((
   100: rgba(var(--color-primary), 0.1),
   500: rgba(var(--color-primary), 1),
   700: rgba(var(--color-primary), 1),
@@ -34,7 +34,7 @@ $fm-primary: mat.define-palette((
   )
 )) !default;
 
-$fm-accent: mat.define-palette((
+$qad-accent: mat.define-palette((
   100: rgba(var(--color-accent), 0.1),
   500: rgba(var(--color-accent), 1),
   700: rgba(var(--color-accent), 1),
@@ -46,7 +46,7 @@ $fm-accent: mat.define-palette((
 )) !default;
 
 // The warn palette is optional (defaults to red).
-$fm-warn: mat.define-palette((
+$qad-warn: mat.define-palette((
   100: rgba(var(--color-warn), 0.1),
   500: rgba(var(--color-warn), 1),
   700: rgba(var(--color-warn), 1),
@@ -57,27 +57,27 @@ $fm-warn: mat.define-palette((
   )
 )) !default;
 
-$fm-theme-foreground: (
+$qad-theme-foreground: (
   text: black,
   elevation: #000,
   divider: rgba(82, 63, 105, 0.06)
 ) !default;
 
-$fm-theme-background: (
+$qad-theme-background: (
   app-bar: #ebebee
 ) !default;
 
 // Create the theme object (a Sass map containing all of the palettes).
-$fm-theme: (
-  primary: $fm-primary,
-  accent: $fm-accent,
-  warn: $fm-warn,
+$qad-theme: (
+  primary: $qad-primary,
+  accent: $qad-accent,
+  warn: $qad-warn,
   is-dark: false,
-  foreground: map_merge(mat.$light-theme-foreground-palette, $fm-theme-foreground),
-  background: map_merge(mat.$light-theme-background-palette, $fm-theme-background),
+  foreground: map_merge(mat.$light-theme-foreground-palette, $qad-theme-foreground),
+  background: map_merge(mat.$light-theme-background-palette, $qad-theme-background),
 ) !default;
 
-$fm-dark-theme-background: (
+$qad-dark-theme-background: (
   background: lighten($sidenav-background, 5),
   card: $sidenav-background,
   app-bar: darken($sidenav-background, 5),
@@ -85,13 +85,13 @@ $fm-dark-theme-background: (
   status-bar: darken($sidenav-background, 5)
 ) !default;
 
-$fm-dark-theme: (
-  primary: $fm-primary,
-  accent: $fm-accent,
-  warn: $fm-warn,
+$qad-dark-theme: (
+  primary: $qad-primary,
+  accent: $qad-accent,
+  warn: $qad-warn,
   is-dark: true,
   foreground: mat.$dark-theme-foreground-palette,
-  background: map_merge(mat.$dark-theme-background-palette, $fm-dark-theme-background),
+  background: map_merge(mat.$dark-theme-background-palette, $qad-dark-theme-background),
 ) !default;
 
 $light-primary-text: white;

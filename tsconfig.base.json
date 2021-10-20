@@ -19,12 +19,25 @@
         "libs/eqms/auth/data-access/src/index.ts"
       ],
       "@qad-nx/eqms-auth-feature": ["libs/eqms/auth/feature/src/index.ts"],
-      "@qad-nx/eqms-utils": ["libs/eqms/utils/src/index.ts"],
+      "@qad-nx/eqms-feature-shell": ["libs/eqms/feature-shell/src/index.ts"],
       "@qad-nx/shared-animations": ["libs/shared/animations/src/index.ts"],
       "@qad-nx/shared-assets": ["libs/shared/assets/src/index.ts"],
+      "@qad-nx/shared-feature-layout": [
+        "libs/shared/feature-layout/src/index.ts"
+      ],
+      "@qad-nx/shared-utils": ["libs/shared/utils/src/index.ts"],
+      "@qad-nx/shared/directives/container": [
+        "libs/shared/directives/container/src/index.ts"
+      ],
+      "@qad-nx/shared/ui/config-panel": [
+        "libs/shared/ui/config-panel/src/index.ts"
+      ],
+      "@qad-nx/shared/ui/footer": ["libs/shared/ui/footer/src/index.ts"],
       "@qad-nx/shared/ui/messages": ["libs/shared/ui/messages/src/index.ts"],
-      "@qad-nx/web/shell/feature": ["libs/web/shell/feature/src/index.ts"],
-      "@qad-nx/web/shell/ui/layout": ["libs/web/shell/ui/layout/src/index.ts"]
+      "@qad-nx/shared/ui/popover": ["libs/shared/ui/popover/src/index.ts"],
+      "@qad-nx/shared/ui/sidebar": ["libs/shared/ui/sidebar/src/index.ts"],
+      "@qad-nx/shared/ui/sidenav": ["libs/shared/ui/sidenav/src/index.ts"],
+      "@qad-nx/shared/ui/toolbar": ["libs/shared/ui/toolbar/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,25 @@
+<ng-template #sidenavRef>
+  <qad-sidenav [collapsed]="sidenavCollapsed$ | async"></qad-sidenav>
+</ng-template>
+
+<ng-template #toolbarRef>
+  <qad-toolbar [hasShadow]="toolbarShadowEnabled$ | async"
+               [mobileQuery]="(isDesktop$ | async) === false"
+               class='qad-toolbar'><div class='toolbar'>
+
+  </div></qad-toolbar>
+</ng-template>
+
+<ng-template #footerRef>
+  <qad-footer *ngIf="isFooterVisible$ | async" class="qad-footer"></qad-footer>
+</ng-template>
+
+<qad-layout [sidenavRef]="sidenavRef" [footerRef]="footerRef" [toolbarRef]="toolbarRef"></qad-layout>
+
+<qad-config-panel-toggle (openConfig)="configPanel.open()"></qad-config-panel-toggle>
+
+<!-- CONFIGPANEL -->
+<qad-sidebar #configPanel [invisibleBackdrop]="true" position="right">
+  <qad-config-panel></qad-config-panel>
+</qad-sidebar>
+<!-- END CONFIGPANEL -->

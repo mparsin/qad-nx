@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { EffectsModule } from '@ngrx/effects';
 import { SharedUiMessagesModule } from '@qad-nx/shared/ui/messages';
 import { LoginComponent } from './login.component';
 import { Route, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
-import { authFeatureKey, reducers } from '@qad-nx/eqms-auth-data-access';
+import { authFeatureKey, reducers, AuthEffects } from '@qad-nx/eqms-auth-data-access';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -19,7 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 const ROUTES: Route[] = [
   {
-    path: '',
+    path: 'auth',
     component: LoginComponent,
   },
 ];
@@ -32,6 +33,7 @@ const ROUTES: Route[] = [
     FormsModule,
     RouterModule.forChild(ROUTES),
     StoreModule.forFeature(authFeatureKey, reducers),
+    EffectsModule.forFeature([AuthEffects]),
     ReactiveFormsModule,
     IconModule,
     MatFormFieldModule,

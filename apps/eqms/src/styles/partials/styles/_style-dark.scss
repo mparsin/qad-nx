@@ -1,20 +1,20 @@
 @use '~@angular/material' as mat;
 @import "../../var";
 
-.fm-style-dark {
-  @include mat.all-component-themes($fm-dark-theme);
+.qad-style-dark {
+  @include mat.all-component-themes($qad-dark-theme);
 
   // Foreground
-  --background-app-bar: #{map-get(map-get($fm-dark-theme, background), app-bar)};
+  --background-app-bar: #{map-get(map-get($qad-dark-theme, background), app-bar)};
 
   // Background
   --footer-background: var(--background-card);
-  --navigation-background: #{map-get(map-get($fm-dark-theme, background), card)};
-  --toolbar-background: #{map-get(map-get($fm-dark-theme, background), card)};
-  --background-base: #{map-get(map-get($fm-dark-theme, background), background)};
+  --navigation-background: #{map-get(map-get($qad-dark-theme, background), card)};
+  --toolbar-background: #{map-get(map-get($qad-dark-theme, background), card)};
+  --background-base: #{map-get(map-get($qad-dark-theme, background), background)};
 
   // Colors
-  --background-card: #{map-get(map-get($fm-dark-theme, background), card)};
+  --background-card: #{map-get(map-get($qad-dark-theme, background), card)};
   --footer-color: var(--text-color);
   --navigation-color: var(--text-color);
   --text-color: #{$light-primary-text};
@@ -22,12 +22,12 @@
   --text-color-light: #{$dark-primary-text};
 
   // Toolbar
-  --foreground-divider: #{map-get(map-get($fm-dark-theme, foreground), divider)};
+  --foreground-divider: #{map-get(map-get($qad-dark-theme, foreground), divider)};
   --text-hint: #{$light-disabled-text};
 
   // Navigation
   --text-hint-light: #{$dark-disabled-text};
-  --background-hover: #{map-get(map-get($fm-dark-theme, background), hover)};
+  --background-hover: #{map-get(map-get($qad-dark-theme, background), hover)};
 
   // Secondary Toolbar
   --text-secondary: #{$light-secondary-text};

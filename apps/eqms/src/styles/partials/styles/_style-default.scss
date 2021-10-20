@@ -61,37 +61,37 @@
   --text-hint-light: #{$light-disabled-text};
 
   // Foreground
-  --foreground-divider: #{map-get(map-get($fm-theme, foreground), divider)};
+  --foreground-divider: #{map-get(map-get($qad-theme, foreground), divider)};
 
   // Background
   --background-base: rgb(245, 245, 248);
-  --background-card: #{map-get(map-get($fm-theme, background), card)};
-  --background-app-bar: #{map-get(map-get($fm-theme, background), app-bar)};
-  --background-hover: #{map-get(map-get($fm-theme, background), hover)};
+  --background-card: #{map-get(map-get($qad-theme, background), card)};
+  --background-app-bar: #{map-get(map-get($qad-theme, background), app-bar)};
+  --background-hover: #{map-get(map-get($qad-theme, background), hover)};
 
   // Elevation
   --elevation-default: var(--elevation-z6);
   --elevation-z0: none;
-  --elevation-z1: #{fm-elevation(1)};
-  --elevation-z2: #{fm-elevation(2)};
-  --elevation-z3: #{fm-elevation(3)};
-  --elevation-z4: #{fm-elevation(4)};
-  --elevation-z5: #{fm-elevation(5)};
-  --elevation-z6: #{fm-elevation(6)};
-  --elevation-z7: #{fm-elevation(7)};
-  --elevation-z8: #{fm-elevation(8)};
-  --elevation-z9: #{fm-elevation(9)};
-  --elevation-z10: #{fm-elevation(10)};
-  --elevation-z11: #{fm-elevation(11)};
-  --elevation-z12: #{fm-elevation(12)};
-  --elevation-z13: #{fm-elevation(13)};
-  --elevation-z14: #{fm-elevation(14)};
-  --elevation-z15: #{fm-elevation(15)};
-  --elevation-z16: #{fm-elevation(16)};
-  --elevation-z17: #{fm-elevation(17)};
-  --elevation-z18: #{fm-elevation(18)};
-  --elevation-z19: #{fm-elevation(19)};
-  --elevation-z20: #{fm-elevation(20)};
+  --elevation-z1: #{qad-elevation(1)};
+  --elevation-z2: #{qad-elevation(2)};
+  --elevation-z3: #{qad-elevation(3)};
+  --elevation-z4: #{qad-elevation(4)};
+  --elevation-z5: #{qad-elevation(5)};
+  --elevation-z6: #{qad-elevation(6)};
+  --elevation-z7: #{qad-elevation(7)};
+  --elevation-z8: #{qad-elevation(8)};
+  --elevation-z9: #{qad-elevation(9)};
+  --elevation-z10: #{qad-elevation(10)};
+  --elevation-z11: #{qad-elevation(11)};
+  --elevation-z12: #{qad-elevation(12)};
+  --elevation-z13: #{qad-elevation(13)};
+  --elevation-z14: #{qad-elevation(14)};
+  --elevation-z15: #{qad-elevation(15)};
+  --elevation-z16: #{qad-elevation(16)};
+  --elevation-z17: #{qad-elevation(17)};
+  --elevation-z18: #{qad-elevation(18)};
+  --elevation-z19: #{qad-elevation(19)};
+  --elevation-z20: #{qad-elevation(20)};
 
   // Sidenav
   --sidenav-width: 280px;

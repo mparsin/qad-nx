@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/feature-layout",
+  "sourceRoot": "libs/shared/feature-layout/src",
+  "prefix": "qad",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/feature-layout"],
+      "options": {
+        "jestConfig": "libs/shared/feature-layout/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/feature-layout/src/**/*.ts",
+          "libs/shared/feature-layout/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

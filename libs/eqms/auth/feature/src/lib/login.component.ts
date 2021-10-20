@@ -18,8 +18,6 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
   isLoggingIn$ = this.authStore.isLoggingIn$;
   isError$ = this.authStore.isError$;
-  password = '';
-  username = '';
   inputType = 'password';
   visible = false;
   icVisibility: Icon = icVisibility;
@@ -39,14 +37,14 @@ export class LoginComponent implements OnInit {
     this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
-      selectedEnvironment: ['', Validators.required],
+      // selectedEnvironment: ['', Validators.required],
     });
   }
 
   send() {
     this.authStore.loginEffect({
-      username: this.username,
-      password: this.password,
+      username: this.form.value.username,
+      password: this.form.value.password,
     });
   }
 

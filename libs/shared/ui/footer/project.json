@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui/footer",
+  "sourceRoot": "libs/shared/ui/footer/src",
+  "prefix": "qad",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/footer"],
+      "options": {
+        "jestConfig": "libs/shared/ui/footer/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/footer/src/**/*.ts",
+          "libs/shared/ui/footer/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

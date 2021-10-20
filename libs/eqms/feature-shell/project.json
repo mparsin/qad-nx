@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/eqms/feature-shell",
+  "sourceRoot": "libs/eqms/feature-shell/src",
+  "prefix": "qad",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/eqms/feature-shell"],
+      "options": {
+        "jestConfig": "libs/eqms/feature-shell/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/eqms/feature-shell/src/**/*.ts",
+          "libs/eqms/feature-shell/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

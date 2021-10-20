@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui/toolbar",
+  "sourceRoot": "libs/shared/ui/toolbar/src",
+  "prefix": "qad",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/toolbar"],
+      "options": {
+        "jestConfig": "libs/shared/ui/toolbar/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/toolbar/src/**/*.ts",
+          "libs/shared/ui/toolbar/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

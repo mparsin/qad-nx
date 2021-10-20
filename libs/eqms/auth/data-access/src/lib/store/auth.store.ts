@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
 import { AuthApiService, loginSuccessAction } from '@qad-nx/eqms-auth-data-access';
 import { switchMap, tap } from 'rxjs/operators';
@@ -41,7 +42,7 @@ export class AuthStore extends ComponentStore<AuthStateInterface> {
     )
   );
 
-  constructor(private authApiService: AuthApiService, private store: Store) {
+  constructor(private authApiService: AuthApiService, private store: Store, private router: Router) {
     super(<AuthStateInterface>{});
   }
 }

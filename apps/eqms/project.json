@@ -19,7 +19,7 @@
           "apps/eqms/src/assets",
           {
             "glob": "**/*",
-            "input": "./libs/shared/assets/src",
+            "input": "./libs/shared/utils/src/lib/assets",
             "output": "./assets"
           }
         ],
