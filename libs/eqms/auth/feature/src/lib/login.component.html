@@ -1,7 +1,9 @@
 <div class="w-full h-full bg-pattern" fxLayout="column" fxLayoutAlign="center center">
-  <!--  <div class="card overflow-hidden max-w-xs m-1 flex-none" *ngIf="backendErrors$ | async as backendErrors">-->
-  <!--    <fm-messages [backendErrors]="backendErrors"></fm-messages>-->
-  <!--  </div>-->
+    <div class="card overflow-hidden max-w-xs m-1 flex-none border-red rounded relative shadow" *ngIf="isError$ | async" @scaleFadeIn>
+<!--      <fm-messages [backendErrors]="backendErrors"></fm-messages>-->
+      <img class="w-full self-center select-none" src="/assets/img/incorrect_password.svg" alt="incorrect password" />
+      <h3 class='text-center'>{{errorMessage$ | async}}</h3>
+    </div>
   <div class="flex flex-row flex-wrap justify-center w-full">
     <!--Login Info-->
     <div @fadeInRight class="card overflow-hidden w-full max-w-xs p-2 m-1 flex-none">

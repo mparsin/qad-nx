@@ -5,6 +5,7 @@ const initialState: AuthStateInterface = {
   isLoading: false,
   isLoggedIn: false,
   isError: false,
+  errorMessage: ''
 };
 
 export const authFeatureKey = 'auth';

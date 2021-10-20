@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe('Login Page', () => {
-  it('Should open login page', () => {
+  it.only('Should open login page', () => {
     cy.fixture('LoginInfo.txt').as('LoginInfo');
     cy.server();
     cy.route(
@@ -183,13 +183,12 @@ describe('Login Page', () => {
       '**/api/environmentInfo/loginInfo?convertToHtml=false',
       '@LoginInfo'
     ).as('login');
-    const origUrl = '';
+    const origUrl = 'auth';
     cy.visit(origUrl);
     cy.get('[data-cy=username]').type('igor');
     cy.get('[data-cy=password').type('aimhi');
 
-    cy.server();
-    cy.route('POST', '**/api/token').as('token');
+    cy.intercept('POST', '**/api/token').as('token');
 
     const signInButton = cy.get('.sign-in-button');
     signInButton.click();

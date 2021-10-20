@@ -1,3 +1,4 @@
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
@@ -9,12 +10,14 @@ export interface AuthStateInterface {
   isLoading: boolean;
   isError: boolean;
   isLoggedIn: boolean;
+  errorMessage: string;
 }
 
 @Injectable({ providedIn: 'root' })
 export class AuthStore extends ComponentStore<AuthStateInterface> {
   isLoggingIn$ = this.select(s => s.isLoading);
   isError$ = this.select(s => s.isError);
+  errorMessage$ = this.select(s => s.errorMessage);
   loginEffect = this.effect<{ username: string; password: string }>(params$ =>
     params$.pipe(
       tap(() => {
@@ -24,17 +27,15 @@ export class AuthStore extends ComponentStore<AuthStateInterface> {
         this.authApiService.loginUser(username, password).pipe(
           tapResponse(
             data => {
-              console.log(data);
               this.patchState({ isLoading: false });
-              console.log('updating global state');
               this.store.dispatch(
                 loginSuccessAction({ currentUser: data, redirectUrl: '' })
               );
               //TODO: save to local storage
             },
-            error => {
-              console.log(error);
-              this.patchState({ isLoading: false, isError: true });
+            (response: HttpErrorResponse) => {
+              console.log(response.error.error);
+              this.patchState({ isLoading: false, isError: true, errorMessage: response.error.error });
             }
           )
         )

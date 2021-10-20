@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   form!: FormGroup;
   isLoggingIn$ = this.authStore.isLoggingIn$;
   isError$ = this.authStore.isError$;
+  errorMessage$ = this.authStore.errorMessage$;
   inputType = 'password';
   visible = false;
   icVisibility: Icon = icVisibility;
