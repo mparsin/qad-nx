@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui/sidenav",
+  "sourceRoot": "libs/shared/ui/sidenav/src",
+  "prefix": "qad",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/sidenav"],
+      "options": {
+        "jestConfig": "libs/shared/ui/sidenav/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/sidenav/src/**/*.ts",
+          "libs/shared/ui/sidenav/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:shared"]
+}

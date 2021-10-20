@@ -1,0 +1,18 @@
+{
+  "hello": "Hello world!",
+  "configuration_panel": {
+    "configuration": "Configuration",
+    "dark_mode": "Dark Mode",
+    "theme_base": "Theme Base",
+    "theme_colors": "Theme Colors",
+    "theme_style": "Theme Style",
+    "classic": "Classic",
+    "centered": "Centered",
+    "classy": "Classy",
+    "thin": "Thin",
+    "enterprise": "Enterprise",
+    "light": "light",
+    "default": "default",
+    "dark": "dark"
+  }
+}

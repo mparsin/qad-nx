@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+
+import { NavigationEnd, Router } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
 import {
   checkRouterChildsData,
@@ -6,8 +8,6 @@ import {
   LayoutService,
 } from '@qad-nx/shared-utils';
 import { filter, map, startWith } from 'rxjs/operators';
-
-import { NavigationEnd, Router } from '@angular/router';
 
 @UntilDestroy()
 @Component({

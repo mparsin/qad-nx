@@ -1,63 +1,68 @@
-<div class='w-full h-full bg-pattern' fxLayout='column' fxLayoutAlign='center center'>
+<div class="w-full h-full bg-pattern" fxLayout="column" fxLayoutAlign="center center">
   <!--  <div class="card overflow-hidden max-w-xs m-1 flex-none" *ngIf="backendErrors$ | async as backendErrors">-->
   <!--    <fm-messages [backendErrors]="backendErrors"></fm-messages>-->
   <!--  </div>-->
-  <div class='flex flex-row flex-wrap justify-center w-full'>
+  <div class="flex flex-row flex-wrap justify-center w-full">
     <!--Login Info-->
-    <div @fadeInRight class='card overflow-hidden w-full max-w-xs p-2 m-1 flex-none'>
-      <ng-container *ngIf='loginInfo$ | async as loginInfo; else loading'>
-        <markdown @scaleFadeIn *ngIf='loginInfo && loginInfo.length > 0' class='variable-binding' [data]='loginInfo'>
+    <div @fadeInRight class="card overflow-hidden w-full max-w-xs p-2 m-1 flex-none">
+      <ng-container *ngIf="loginInfo$ | async as loginInfo; else loading">
+        <markdown @scaleFadeIn *ngIf="loginInfo && loginInfo.length > 0" class="variable-binding" [data]="loginInfo">
         </markdown>
       </ng-container>
       <ng-template #loading>
-        <div @scaleFadeIn *ngIf='loginInfoLoading | async'>
-          <h2 class='headline m-0 text-center'>Loading...</h2>
+        <div @scaleFadeIn *ngIf="loginInfoLoading | async">
+          <h2 class="headline m-0 text-center">Loading...</h2>
         </div>
-        <qad-load-error message='Error Loading Login Info. Please try again later' *ngIf='loginInfoError | async' @scaleFadeIn class='flex flex-col'></qad-load-error>
+        <qad-load-error
+          message="Error Loading Login Info. Please try again later"
+          *ngIf="loginInfoError | async"
+          @scaleFadeIn
+          class="flex flex-col"
+        ></qad-load-error>
       </ng-template>
     </div>
     <!--Login Form-->
-    <div @fadeInUp class='card overflow-hidden w-full max-w-xs m-1 flex-none'>
-      <div class='p-6 pb-0' fxLayout='column' fxLayoutAlign='center center'>
-        <div class='fill-current text-center'>
-          <img alt='logo' class='w-16' src='/assets/images/qad-logo.svg' />
+    <div @fadeInUp class="card overflow-hidden w-full max-w-xs m-1 flex-none">
+      <div class="p-6 pb-0" fxLayout="column" fxLayoutAlign="center center">
+        <div class="fill-current text-center">
+          <img alt="logo" class="w-16" src="/assets/img/qad-logo.svg" />
         </div>
       </div>
 
-      <div class='text-center mt-4'>
-        <h2 class='title m-0'>Sign in to QAD EQMS</h2>
-        <h4 class='body-2 text-secondary m-0'>Sign in with your credentials below.</h4>
+      <div class="text-center mt-4">
+        <h2 class="title m-0">Sign in to QAD EQMS</h2>
+        <h4 class="body-2 text-secondary m-0">Sign in with your credentials below.</h4>
       </div>
 
-      <div [formGroup]='form' class='p-6' fxLayout='column' fxLayoutGap='16px'>
-        <div fxFlex='auto' fxLayout='column'>
-          <mat-form-field fxFlex='grow'>
+      <div [formGroup]="form" class="p-6" fxLayout="column" fxLayoutGap="16px">
+        <div fxFlex="auto" fxLayout="column">
+          <mat-form-field fxFlex="grow">
             <mat-label>Username</mat-label>
-            <input formControlName='username' matInput required data-cy='username' (keyup.enter)='send()' />
+            <input formControlName="username" matInput required data-cy="username" (keyup.enter)="send()" />
             <mat-error *ngIf="form.get('username')!.hasError('required')"
-            >We need an email address to log you in
+              >We need an email address to log you in
             </mat-error>
           </mat-form-field>
-          <mat-form-field fxFlex='grow'>
+          <mat-form-field fxFlex="grow">
             <mat-label>Password</mat-label>
             <input
-              [type]='inputType'
-              formControlName='password'
-              data-cy='password'
+              [type]="inputType"
+              formControlName="password"
+              data-cy="password"
               matInput
               required
-              (keyup.enter)='send()'
+              (keyup.enter)="send()"
             />
             <button
-              (click)='toggleVisibility()'
+              (click)="toggleVisibility()"
               mat-icon-button
               matSuffix
-              matTooltip='Toggle Visibility'
-              data-cy='toggle-visibility-button'
-              type='button'
+              matTooltip="Toggle Visibility"
+              data-cy="toggle-visibility-button"
+              type="button"
             >
-              <mat-icon *ngIf='visible' [icIcon]='icVisibility'></mat-icon>
-              <mat-icon *ngIf='!visible' [icIcon]='icVisibilityOff'></mat-icon>
+              <mat-icon *ngIf="visible" [icIcon]="icVisibility"></mat-icon>
+              <mat-icon *ngIf="!visible" [icIcon]="icVisibilityOff"></mat-icon>
             </button>
             <mat-hint>Click the eye to toggle visibility</mat-hint>
             <mat-error *ngIf="form.get('password')!.hasError('required')">We need a password to log you in</mat-error>
@@ -74,18 +79,18 @@
           <!--          </mat-form-field>-->
         </div>
 
-        <div fxLayout='row' fxLayoutAlign='space-between center'>
-          <mat-checkbox class='caption' color='primary'>Remember Me</mat-checkbox>
-          <a [routerLink]="['/forgot-password']" class='caption'>Forgot Password?</a>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <mat-checkbox class="caption" color="primary">Remember Me</mat-checkbox>
+          <a [routerLink]="['/forgot-password']" class="caption">Forgot Password?</a>
         </div>
 
         <button
-          (click)='send()'
-          color='primary'
-          class='sign-in-button'
+          (click)="send()"
+          color="primary"
+          class="sign-in-button"
           mat-raised-button
-          type='button'
-          [disabled]='isLoggingIn$ | async'
+          type="button"
+          [disabled]="isLoggingIn$ | async"
         >
           SIGN IN
         </button>

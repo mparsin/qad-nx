@@ -1,0 +1,17 @@
+{
+  "configuration_panel": {
+    "configuration": "Настройки",
+    "dark_mode": "Тёмный режим",
+    "theme_base": "Основная тема",
+    "theme_colors": "Цвета темы",
+    "theme_style": "Стиль темы",
+    "classic": "Классическая",
+    "centered": "По центру",
+    "classy": "Классная",
+    "thin": "Тонкая",
+    "enterprise": "Корпоративная",
+    "light": "Светлая",
+    "default": "По умолчанию",
+    "dark": "Тёмная"
+  }
+}

@@ -4,25 +4,25 @@ import { BehaviorSubject } from 'rxjs';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
 export enum Style {
-  light = 'fm-style-light',
-  default = 'fm-style-default',
-  dark = 'fm-style-dark'
+  light = 'qad-style-light',
+  default = 'qad-style-default',
+  dark = 'qad-style-dark',
 }
-
 
 @UntilDestroy()
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StyleService {
-
   defaultStyle = Style.default;
 
   private _styleSubject = new BehaviorSubject<Style>(this.defaultStyle);
   style$ = this._styleSubject.asObservable();
 
   constructor(@Inject(DOCUMENT) private document: Document) {
-    this.style$.pipe(untilDestroyed(this)).subscribe(style => this._updateStyle(style));
+    this.style$
+      .pipe(untilDestroyed(this))
+      .subscribe(style => this._updateStyle(style));
   }
 
   setStyle(style: Style) {
@@ -32,11 +32,13 @@ export class StyleService {
   private _updateStyle(style: Style) {
     const body = this.document.body;
 
-    Object.values(Style).filter(s => s !== style).forEach(value => {
-      if (body.classList.contains(value)) {
-        body.classList.remove(value);
-      }
-    });
+    Object.values(Style)
+      .filter(s => s !== style)
+      .forEach(value => {
+        if (body.classList.contains(value)) {
+          body.classList.remove(value);
+        }
+      });
 
     body.classList.add(style);
   }

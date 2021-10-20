@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui/sidebar",
+  "sourceRoot": "libs/shared/ui/sidebar/src",
+  "prefix": "qad",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui/sidebar"],
+      "options": {
+        "jestConfig": "libs/shared/ui/sidebar/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/sidebar/src/**/*.ts",
+          "libs/shared/ui/sidebar/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:shared"]
+}
