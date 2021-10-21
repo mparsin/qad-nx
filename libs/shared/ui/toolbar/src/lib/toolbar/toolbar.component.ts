@@ -24,6 +24,7 @@ import { Icon } from '@visurel/iconify-angular';
 })
 export class ToolbarComponent implements OnInit {
   @Input() mobileQuery = false;
+  @Input() user: string = '';
 
   @Input()
   @HostBinding('class.shadow-b')
@@ -71,5 +72,9 @@ export class ToolbarComponent implements OnInit {
 
   openSearch() {
     this.layoutService.openSearch();
+  }
+
+  logout() {
+    console.log('Logging out');
   }
 }

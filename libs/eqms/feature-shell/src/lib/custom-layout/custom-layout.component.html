@@ -5,6 +5,7 @@
 <ng-template #toolbarRef>
   <qad-toolbar [hasShadow]="toolbarShadowEnabled$ | async"
                [mobileQuery]="(isDesktop$ | async) === false"
+               [user]='user'
                class='qad-toolbar'><div class='toolbar'>
 
   </div></qad-toolbar>

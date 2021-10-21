@@ -2,7 +2,11 @@ import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
-import { AuthApiService, loginSuccessAction } from '@qad-nx/eqms-auth-data-access';
+import {
+  AuthApiService,
+  CurrentUserInterface,
+  loginSuccessAction,
+} from '@qad-nx/eqms-auth-data-access';
 import { switchMap, tap } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 
@@ -11,6 +15,7 @@ export interface AuthStateInterface {
   isError: boolean;
   isLoggedIn: boolean;
   errorMessage: string;
+  currentUser?: CurrentUserInterface;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -35,7 +40,11 @@ export class AuthStore extends ComponentStore<AuthStateInterface> {
             },
             (response: HttpErrorResponse) => {
               console.log(response.error.error);
-              this.patchState({ isLoading: false, isError: true, errorMessage: response.error.error });
+              this.patchState({
+                isLoading: false,
+                isError: true,
+                errorMessage: response.error.error,
+              });
             }
           )
         )
@@ -43,7 +52,11 @@ export class AuthStore extends ComponentStore<AuthStateInterface> {
     )
   );
 
-  constructor(private authApiService: AuthApiService, private store: Store, private router: Router) {
+  constructor(
+    private authApiService: AuthApiService,
+    private store: Store,
+    private router: Router
+  ) {
     super(<AuthStateInterface>{});
   }
 }

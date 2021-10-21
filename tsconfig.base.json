@@ -37,7 +37,10 @@
       "@qad-nx/shared/ui/popover": ["libs/shared/ui/popover/src/index.ts"],
       "@qad-nx/shared/ui/sidebar": ["libs/shared/ui/sidebar/src/index.ts"],
       "@qad-nx/shared/ui/sidenav": ["libs/shared/ui/sidenav/src/index.ts"],
-      "@qad-nx/shared/ui/toolbar": ["libs/shared/ui/toolbar/src/index.ts"]
+      "@qad-nx/shared/ui/toolbar": ["libs/shared/ui/toolbar/src/index.ts"],
+      "@qad-nx/shared/ui/toolbar-user": [
+        "libs/shared/ui/toolbar-user/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
