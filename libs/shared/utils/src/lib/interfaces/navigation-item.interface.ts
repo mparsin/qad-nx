@@ -1,6 +1,9 @@
 import { Icon } from '@visurel/iconify-angular';
 
-export type NavigationItem = NavigationLink | NavigationDropdown | NavigationSubheading;
+export type NavigationItem =
+  | NavigationLink
+  | NavigationDropdown
+  | NavigationSubheading;
 
 export interface NavigationLink {
   type: 'link';
@@ -8,6 +11,7 @@ export interface NavigationLink {
   fragment?: string;
   label: string;
   icon: Icon;
+  color?: string;
   routerLinkActiveOptions?: { exact: boolean };
   badge?: {
     value: string;

@@ -6,17 +6,28 @@ import {
   Input,
   OnChanges,
   OnInit,
-  SimpleChanges
+  SimpleChanges,
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { NavigationDropdown, NavigationItem, NavigationLink, NavigationService } from '@qad-nx/shared-utils';
+import {
+  LayoutService,
+  NavigationDropdown,
+  NavigationItem,
+  NavigationLink,
+  NavigationService,
+} from '@qad-nx/shared-utils';
 import { dropdownAnimation } from 'libs/shared/animations/src/lib/dropdown.animation';
-import { filter } from 'rxjs/operators';
+import {
+  filter,
+  combineLatest,
+  withLatestFrom,
+  tap,
+  map,
+} from 'rxjs/operators';
 import icKeyboardArrowRight from '@iconify/icons-ic/twotone-keyboard-arrow-right';
 
 import { Icon } from '@visurel/iconify-angular';
-
 
 @UntilDestroy()
 @Component({
@@ -24,23 +35,31 @@ import { Icon } from '@visurel/iconify-angular';
   templateUrl: './sidenav-item.component.html',
   styleUrls: ['./sidenav-item.component.scss'],
   animations: [dropdownAnimation],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidenavItemComponent implements OnInit, OnChanges {
-
   @Input() item!: NavigationItem;
   @Input() level = 0;
+  collapsed$ = this.layoutService.sidenavCollapsedOpen$.pipe(
+    withLatestFrom(this.layoutService.sidenavCollapsed$),
+    map(([first, second]) => {
+      return !first && second;
+    })
+  );
+
   isOpen = false;
   isActive = false;
   icKeyboardArrowRight: any = icKeyboardArrowRight;
-
   isLink = this.navigationService.isLink;
   isDropdown = this.navigationService.isDropdown;
   isSubheading = this.navigationService.isSubheading;
 
-  constructor(private router: Router,
-              private cd: ChangeDetectorRef,
-              private navigationService: NavigationService) { }
+  constructor(
+    private router: Router,
+    private cd: ChangeDetectorRef,
+    private navigationService: NavigationService,
+    private layoutService: LayoutService
+  ) {}
 
   @HostBinding('class')
   get levelClass() {
@@ -48,21 +67,29 @@ export class SidenavItemComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd),
-      filter(() => this.isDropdown(this.item)),
-      untilDestroyed(this)
-    ).subscribe(() => this.onRouteChange());
+    this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+        filter(() => this.isDropdown(this.item)),
+        untilDestroyed(this)
+      )
+      .subscribe(() => this.onRouteChange());
 
-    this.navigationService.openChange$.pipe(
-      filter(() => this.isDropdown(this.item)),
-      untilDestroyed(this)
-    ).subscribe(item => this.onOpenChange(item));
+    this.navigationService.openChange$
+      .pipe(
+        filter(() => this.isDropdown(this.item)),
+        untilDestroyed(this)
+      )
+      .subscribe(item => this.onOpenChange(item));
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     // eslint-disable-next-line no-prototype-builtins
-    if (changes && changes.hasOwnProperty('item') && this.isDropdown(this.item)) {
+    if (
+      changes &&
+      changes.hasOwnProperty('item') &&
+      this.isDropdown(this.item)
+    ) {
       this.onRouteChange();
     }
   }
@@ -128,7 +155,7 @@ export class SidenavItemComponent implements OnInit, OnChanges {
     return prop instanceof Function;
   }
 
-  getIcon(item: NavigationLink | NavigationDropdown): Icon | string  {
-    return item.icon ? item.icon : ''
+  getIcon(item: NavigationLink | NavigationDropdown): Icon | string {
+    return item.icon ? item.icon : '';
   }
 }

@@ -42,6 +42,10 @@
       width: var(--sidenav-width);
     }
   }
+
+  .filter-box {
+    width: var(--sidenav-width);
+  }
 }
 
 .sidenav-toolbar {
@@ -61,5 +65,5 @@
 }
 
 .sidenav-items {
-  padding-top: var(--padding);
+  // padding-top: var(--padding);
 }

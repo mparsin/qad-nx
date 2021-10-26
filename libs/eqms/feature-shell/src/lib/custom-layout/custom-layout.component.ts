@@ -6,12 +6,17 @@ import { select, Store } from '@ngrx/store';
 import {
   currentUserSelector,
   isLoggedInSelector,
+  loginSuccessAction,
 } from '@qad-nx/eqms-auth-data-access';
 import {
   checkRouterChildsData,
   ConfigService,
   LayoutService,
+  PersistenceService,
 } from '@qad-nx/shared-utils';
+import { IconService } from '@visurel/iconify-angular';
+import { loadNavigation } from 'libs/eqms/nav/data-access/src/lib/store/navigation.action';
+import { appIcons } from 'libs/shared/utils/src/lib/icons/app.icons';
 import { filter, map, startWith, tap } from 'rxjs/operators';
 
 @UntilDestroy()
@@ -45,8 +50,13 @@ export class CustomLayoutComponent implements OnInit {
     private layoutService: LayoutService,
     private configService: ConfigService,
     private router: Router,
-    private store: Store
-  ) {}
+    private store: Store,
+    private iconService: IconService,
+    private persistentService: PersistenceService
+  ) {
+    iconService.registerAll(appIcons);
+    store.dispatch(loadNavigation());
+  }
 
   ngOnInit(): void {
     this.store

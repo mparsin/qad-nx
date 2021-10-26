@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { SharedUiScrollbarModule } from '@qad-nx/shared/ui/scrollbar';
 import { IconModule } from '@visurel/iconify-angular';
 import { SidenavItemModule } from 'libs/shared/ui/sidenav/src/lib/sidenav/sidenav-item/sidenav-item.module';
 import { SidenavComponent } from 'libs/shared/ui/sidenav/src/lib/sidenav/sidenav.component';
@@ -18,6 +21,9 @@ import { SidenavComponent } from 'libs/shared/ui/sidenav/src/lib/sidenav/sidenav
     MatButtonModule,
     MatIconModule,
     IconModule,
+    MatInputModule,
+    FormsModule,
+    SharedUiScrollbarModule,
   ],
   exports: [SidenavComponent],
 })

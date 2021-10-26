@@ -6,8 +6,10 @@ import {
   AuthApiService,
   CurrentUserInterface,
   loginSuccessAction,
+  logoutAction,
 } from '@qad-nx/eqms-auth-data-access';
-import { switchMap, tap } from 'rxjs/operators';
+import { PersistenceService } from '@qad-nx/shared-utils';
+import { switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 
 export interface AuthStateInterface {
@@ -37,6 +39,7 @@ export class AuthStore extends ComponentStore<AuthStateInterface> {
                 loginSuccessAction({ currentUser: data, redirectUrl: '' })
               );
               //TODO: save to local storage
+              this.persistenceService.setUser(data);
             },
             (response: HttpErrorResponse) => {
               console.log(response.error.error);
@@ -52,8 +55,13 @@ export class AuthStore extends ComponentStore<AuthStateInterface> {
     )
   );
 
+  logoutEffect = this.effect(params$ =>
+    params$.pipe(tap(() => this.store.dispatch(logoutAction())))
+  );
+
   constructor(
     private authApiService: AuthApiService,
+    private persistenceService: PersistenceService,
     private store: Store,
     private router: Router
   ) {

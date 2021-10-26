@@ -1,9 +1,18 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import icVisibility from '@iconify/icons-ic/twotone-visibility';
 import icVisibilityOff from '@iconify/icons-ic/twotone-visibility-off';
 import { AuthStore, LoginInfoStore } from '@qad-nx/eqms-auth-data-access';
-import { fadeInRight400ms, fadeInUp400ms, scaleFadeIn400ms } from '@qad-nx/shared-animations';
+import {
+  fadeInRight400ms,
+  fadeInUp400ms,
+  scaleFadeIn400ms,
+} from '@qad-nx/shared-animations';
 import { Icon } from '@visurel/iconify-angular';
 
 @Component({
@@ -25,7 +34,7 @@ export class LoginComponent implements OnInit {
   icVisibilityOff: Icon = icVisibilityOff;
   loginInfo$ = this.loginInfoStore.loginInfo$;
   loginInfoLoading = this.loginInfoStore.isLoading$;
-  loginInfoError = this.loginInfoStore.isError$
+  loginInfoError = this.loginInfoStore.isError$;
 
   constructor(
     private authStore: AuthStore,
@@ -35,6 +44,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.authStore.logoutEffect();
     this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],

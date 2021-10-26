@@ -6,7 +6,11 @@ import { LoginComponent } from './login.component';
 import { Route, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
-import { authFeatureKey, reducers, AuthEffects } from '@qad-nx/eqms-auth-data-access';
+import {
+  authFeatureKey,
+  reducers,
+  AuthEffects,
+} from '@qad-nx/eqms-auth-data-access';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -44,7 +48,7 @@ const ROUTES: Route[] = [
     MatOptionModule,
     MarkdownModule.forRoot(),
     MatButtonModule,
-    SharedUiMessagesModule
+    SharedUiMessagesModule,
   ],
   exports: [],
 })

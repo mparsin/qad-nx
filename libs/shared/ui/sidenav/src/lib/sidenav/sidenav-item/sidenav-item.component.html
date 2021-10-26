@@ -3,10 +3,12 @@
    [routerLinkActiveOptions]="item.routerLinkActiveOptions || { exact: false }"
    [routerLink]="item.route"
    class="item"
+   [class.sidenav-collapsed]='collapsed$ | async'
    fxLayout="row"
    matRipple
    routerLinkActive="active">
-  <mat-icon *ngIf="level === 0" [icIcon]="getIcon(item)" class="item-icon" fxFlex="none"></mat-icon>
+  <mat-icon [icIcon]="getIcon(item)" class="item-icon" fxFlex="none"></mat-icon>
+<!--  <span>{{collapsed$ | async}}</span>-->
   <span class="item-label" fxFlex="auto">{{ item.label }}</span>
   <span *ngIf="item.badge"
         [ngClass]="[item.badge.bgClass, item.badge.textClass]"
@@ -16,11 +18,12 @@
 
 <div (click)="item.route()"
      *ngIf="isLink(item) && isFunction(item.route)"
+     [class.collapsed]='collapsed$ | async'
      class="item"
      fxLayout="row"
      matRipple
      routerLinkActive="active">
-  <mat-icon *ngIf="level === 0" [icIcon]="getIcon(item)" class="item-icon" fxFlex="none"></mat-icon>
+  <mat-icon [icIcon]="getIcon(item)" class="item-icon" fxFlex="none"></mat-icon>
   <span class="item-label" fxFlex="auto">{{ item.label }}</span>
   <span *ngIf="item.badge"
         [ngClass]="[item.badge.bgClass, item.badge.textClass]"
@@ -32,10 +35,11 @@
   <div (click)="toggleOpen()"
        [class.active]="isOpen || isActive"
        [class.open]="isOpen"
+       [class.collapsed]='collapsed$ | async'
        class="item"
        fxLayout="row"
        matRipple>
-    <mat-icon *ngIf="level === 0" [icIcon]="getIcon(item)" class="item-icon" fxFlex="none"></mat-icon>
+    <mat-icon [icIcon]="getIcon(item)" class="item-icon" fxFlex="none"></mat-icon>
     <span class="item-label" fxFlex="auto">{{ item.label }}</span>
     <span *ngIf="item.badge"
           [ngClass]="[item.badge.bgClass, item.badge.textClass]"
@@ -44,13 +48,14 @@
     <mat-icon [icIcon]="icKeyboardArrowRight" class="item-dropdown-icon" fxFlex="none"></mat-icon>
   </div>
   <div [@dropdown]="isOpen" class="item-dropdown">
-    <qad-sidenav-item *ngFor="let subItem of item.children" [item]="subItem" [level]="level + 1"></qad-sidenav-item>
+    <qad-sidenav-item *ngFor="let subItem of item.children" [item]="subItem" [level]="level + 1" c></qad-sidenav-item>
   </div>
 </ng-container>
 
 
 <ng-container *ngIf="isSubheading(item)">
   <div class="subheading">{{ item.label }}</div>
-  <qad-sidenav-item *ngFor="let subItem of item.children" [item]="subItem" [level]="0"></qad-sidenav-item>
+  <qad-sidenav-item *ngFor="let subItem of item.children" [item]="subItem" [level]="0"
+                    [attr.data-cy]="subItem.label"></qad-sidenav-item>
 </ng-container>
 

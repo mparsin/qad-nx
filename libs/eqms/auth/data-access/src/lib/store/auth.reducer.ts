@@ -2,6 +2,7 @@ import { Action, createReducer, on } from '@ngrx/store';
 import {
   AuthStateInterface,
   loginSuccessAction,
+  logoutAction,
 } from '@qad-nx/eqms-auth-data-access';
 
 const initialState: AuthStateInterface = {
@@ -24,6 +25,15 @@ export const authReducer = createReducer(
       isLoggedIn: true,
       currentUser: action.currentUser,
       isError: false,
+    })
+  ),
+  on(
+    logoutAction,
+    (state, action): AuthStateInterface => ({
+      ...state,
+      isLoading: false,
+      isLoggedIn: false,
+      currentUser: undefined,
     })
   )
 );

@@ -8,6 +8,7 @@ export * from './lib/services/layout.service';
 export * from './lib/services/navigation.service';
 export * from './lib/services/style.service';
 export * from './lib/services/configs';
+export * from './lib/services/persistence.service';
 export * from './lib/ensure';
 export * from './lib/interfaces/deep-partial.type';
 export * from './lib/interfaces/environment-info.interface';

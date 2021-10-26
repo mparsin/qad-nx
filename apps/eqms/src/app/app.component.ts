@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { translate, TranslocoService } from '@ngneat/transloco';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { NavigationService } from '@qad-nx/shared-utils';
+import { Store } from '@ngrx/store';
+import { loginSuccessAction } from '@qad-nx/eqms-auth-data-access';
+import { NavigationService, PersistenceService } from '@qad-nx/shared-utils';
 import { filter } from 'rxjs/operators';
 import icLayers from '@iconify/icons-ic/twotone-layers';
 import icAssigment from '@iconify/icons-ic/twotone-assignment';
@@ -17,8 +19,16 @@ export class AppComponent {
 
   constructor(
     private navigationService: NavigationService,
+    store: Store,
+    persistentService: PersistenceService,
     translocoService: TranslocoService
   ) {
+    const user = persistentService.getUser();
+    if (user) {
+      store.dispatch(
+        loginSuccessAction({ currentUser: user, redirectUrl: '' })
+      );
+    }
     translocoService.load('en').pipe(untilDestroyed(this)).subscribe();
     translocoService.events$
       .pipe(

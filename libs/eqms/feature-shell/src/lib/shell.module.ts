@@ -10,6 +10,7 @@ import { SharedUiSidebarModule } from '@qad-nx/shared/ui/sidebar';
 import { SharedUiSidenavModule } from '@qad-nx/shared/ui/sidenav';
 import { SharedUiToolbarModule } from '@qad-nx/shared/ui/toolbar';
 import { CustomLayoutComponent } from '@qad-nx/eqms-feature-shell';
+import { NavigationEffect } from 'libs/eqms/nav/data-access/src/lib/store/navigation.effect';
 import { webShellRoutes } from './web-shell.routes';
 import { StoreModule } from '@ngrx/store';
 import { routerReducer } from '@ngrx/router-store';
@@ -29,7 +30,7 @@ const rootReducers = {
     }),
     LoginModule,
     StoreModule.forRoot(rootReducers),
-    EffectsModule.forRoot(),
+    EffectsModule.forRoot([NavigationEffect]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: false, //TODO: set based on active environment

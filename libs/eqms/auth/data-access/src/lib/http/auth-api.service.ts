@@ -12,7 +12,7 @@ export interface CurrentUserInterface {
 
 @Injectable({ providedIn: 'root' })
 export class AuthApiService {
-  private baseUrl = 'http://localhost:55540/api';
+  private baseUrl = 'http://localhost:55540/api'; //TODO: user environment
   constructor(private httpClient: HttpClient) {}
 
   loginUser(username: string, password: string) {
