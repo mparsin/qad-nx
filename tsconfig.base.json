@@ -38,7 +38,6 @@
       "@qad-nx/shared/ui/footer": ["libs/shared/ui/footer/src/index.ts"],
       "@qad-nx/shared/ui/messages": ["libs/shared/ui/messages/src/index.ts"],
       "@qad-nx/shared/ui/popover": ["libs/shared/ui/popover/src/index.ts"],
-      "@qad-nx/shared/ui/scrollbar": ["libs/shared/ui/scrollbar/src/index.ts"],
       "@qad-nx/shared/ui/sidebar": ["libs/shared/ui/sidebar/src/index.ts"],
       "@qad-nx/shared/ui/sidenav": ["libs/shared/ui/sidenav/src/index.ts"],
       "@qad-nx/shared/ui/toolbar": ["libs/shared/ui/toolbar/src/index.ts"],

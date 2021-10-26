@@ -17,7 +17,6 @@
     "shared-ui-messages": "libs/shared/ui/messages",
     "shared-ui-messages-e2e": "apps/shared-ui-messages-e2e",
     "shared-ui-popover": "libs/shared/ui/popover",
-    "shared-ui-scrollbar": "libs/shared/ui/scrollbar",
     "shared-ui-sidebar": "libs/shared/ui/sidebar",
     "shared-ui-sidenav": "libs/shared/ui/sidenav",
     "shared-ui-toolbar": "libs/shared/ui/toolbar",
