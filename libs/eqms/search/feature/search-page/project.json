@@ -6,7 +6,9 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/eqms/search/feature/search-page"],
+      "outputs": [
+        "coverage/libs/eqms/search/feature/search-page"
+      ],
       "options": {
         "jestConfig": "libs/eqms/search/feature/search-page/jest.config.js",
         "passWithNoTests": true

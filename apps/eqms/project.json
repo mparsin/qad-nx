@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/eqms",
         "index": "apps/eqms/src/index.html",
@@ -21,7 +23,8 @@
             "glob": "**/*",
             "input": "./libs/shared/utils/src/lib/assets",
             "output": "./assets"
-          }
+          },
+          "apps/eqms/src/manifest.webmanifest"
         ],
         "styles": [
           "apps/eqms/src/styles/tailwind.scss",
@@ -29,7 +32,9 @@
         ],
         "scripts": [],
         "allowedCommonJsDependencies": [],
-        "preserveSymlinks": true
+        "preserveSymlinks": true,
+        "serviceWorker": true,
+        "ngswConfigPath": "apps/eqms/ngsw-config.json"
       },
       "configurations": {
         "production": {
@@ -88,12 +93,17 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/eqms/src/**/*.ts", "apps/eqms/src/**/*.html"]
+        "lintFilePatterns": [
+          "apps/eqms/src/**/*.ts",
+          "apps/eqms/src/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/eqms"],
+      "outputs": [
+        "coverage/apps/eqms"
+      ],
       "options": {
         "jestConfig": "apps/eqms/jest.config.js",
         "passWithNoTests": true
@@ -116,7 +126,9 @@
     },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "uiFramework": "@storybook/angular",
         "outputPath": "dist/storybook/eqms",
@@ -131,5 +143,7 @@
       }
     }
   },
-  "tags": ["type:app"]
+  "tags": [
+    "type:app"
+  ]
 }

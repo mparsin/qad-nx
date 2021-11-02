@@ -6,7 +6,9 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/eqms/nav/feature/process-list"],
+      "outputs": [
+        "coverage/libs/eqms/nav/feature/process-list"
+      ],
       "options": {
         "jestConfig": "libs/eqms/nav/feature/process-list/jest.config.js",
         "passWithNoTests": true

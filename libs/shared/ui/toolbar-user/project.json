@@ -6,7 +6,9 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/ui/toolbar-user"],
+      "outputs": [
+        "coverage/libs/shared/ui/toolbar-user"
+      ],
       "options": {
         "jestConfig": "libs/shared/ui/toolbar-user/jest.config.js",
         "passWithNoTests": true

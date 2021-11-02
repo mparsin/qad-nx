@@ -13,8 +13,11 @@ export class AuthEffects {
   login$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(loginSuccessAction)
-        // tap(r => this.router.navigate([r.redirectUrl]))
+        ofType(loginSuccessAction),
+        tap(r => {
+          if (r.redirectUrl !== undefined)
+            this.router.navigate([r.redirectUrl]);
+        })
         // mergeMap(() => this.moviesService.getAll()
         //   .pipe(
         //     map(movies => ({ type: '[Movies API] Movies Loaded Success', payload: movies })),

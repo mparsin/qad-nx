@@ -6,7 +6,9 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/eqms/dashboards"],
+      "outputs": [
+        "coverage/libs/eqms/dashboards"
+      ],
       "options": {
         "jestConfig": "libs/eqms/dashboards/jest.config.js",
         "passWithNoTests": true

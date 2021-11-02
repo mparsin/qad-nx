@@ -19,10 +19,14 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/eqms-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": [
+          "apps/eqms-e2e/**/*.{js,ts}"
+        ]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["eqms"]
+  "implicitDependencies": [
+    "eqms"
+  ]
 }

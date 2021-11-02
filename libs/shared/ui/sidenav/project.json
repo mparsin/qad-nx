@@ -6,7 +6,9 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shared/ui/sidenav"],
+      "outputs": [
+        "coverage/libs/shared/ui/sidenav"
+      ],
       "options": {
         "jestConfig": "libs/shared/ui/sidenav/jest.config.js",
         "passWithNoTests": true
@@ -22,5 +24,7 @@
       }
     }
   },
-  "tags": ["scope:shared"]
+  "tags": [
+    "scope:shared"
+  ]
 }

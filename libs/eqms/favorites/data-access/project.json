@@ -6,7 +6,9 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/eqms/favorites/data-access"],
+      "outputs": [
+        "coverage/libs/eqms/favorites/data-access"
+      ],
       "options": {
         "jestConfig": "libs/eqms/favorites/data-access/jest.config.js",
         "passWithNoTests": true

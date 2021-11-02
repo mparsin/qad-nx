@@ -6,7 +6,9 @@
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/eqms/feature-shell"],
+      "outputs": [
+        "coverage/libs/eqms/feature-shell"
+      ],
       "options": {
         "jestConfig": "libs/eqms/feature-shell/jest.config.js",
         "passWithNoTests": true
@@ -22,5 +24,7 @@
       }
     }
   },
-  "tags": ["scope:eqms"]
+  "tags": [
+    "scope:eqms"
+  ]
 }
