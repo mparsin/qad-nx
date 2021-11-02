@@ -13,5 +13,11 @@
     "light": "Светлая",
     "default": "По умолчанию",
     "dark": "Тёмная"
-  }
+  },
+  "greetings": {
+    "good_morning": "Доброе утро",
+    "good_afternoon": "Добрый день",
+    "good_evening": "Добрый вечер"
+  },
+  "my_favorites": "Моё избранное"
 }

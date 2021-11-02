@@ -20,8 +20,18 @@
       ],
       "@qad-nx/eqms-auth-feature": ["libs/eqms/auth/feature/src/index.ts"],
       "@qad-nx/eqms-feature-shell": ["libs/eqms/feature-shell/src/index.ts"],
+      "@qad-nx/eqms/dashboards": ["libs/eqms/dashboards/src/index.ts"],
+      "@qad-nx/eqms/favorites/data-access": [
+        "libs/eqms/favorites/data-access/src/index.ts"
+      ],
       "@qad-nx/eqms/nav/data-access": [
         "libs/eqms/nav/data-access/src/index.ts"
+      ],
+      "@qad-nx/eqms/nav/feature/process-list": [
+        "libs/eqms/nav/feature/process-list/src/index.ts"
+      ],
+      "@qad-nx/eqms/search/feature/search-page": [
+        "libs/eqms/search/feature/search-page/src/index.ts"
       ],
       "@qad-nx/shared-animations": ["libs/shared/animations/src/index.ts"],
       "@qad-nx/shared-assets": ["libs/shared/assets/src/index.ts"],

@@ -15,16 +15,22 @@
       <mat-icon *ngIf='collapsed' [icIcon]='icRadioButtonUnchecked' size='14px'></mat-icon>
     </button>
   </div>
+  <mat-progress-bar mode='indeterminate' *ngIf='isLoading$ | async'></mat-progress-bar>
   <mat-form-field class='w-full px-2 py-1' appearance='fill'>
     <mat-label class='text-primary'>Filter</mat-label>
-    <input matInput type='text' [(ngModel)]='filter'>
-    <button *ngIf='filter' matSuffix mat-icon-button aria-label='Clear' (click)="filter=''">
+    <input matInput type='text' [(ngModel)]='filter' (ngModelChange)='onFilterChanged()'>
+    <button *ngIf='filter' matSuffix mat-icon-button aria-label='Clear' (click)="filter=''; onFilterChanged()">
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
+
+  <ng-scrollbar *ngIf='isLoaded$ | async'>
     <div class='sidenav-items'>
       <qad-sidenav-item *ngFor='let item of $any((items$ | async)); trackBy: trackByRoute'
                         [item]='item'
-                        [level]='0'></qad-sidenav-item>
+                        [level]='0'
+                        (isFavoriteChanged)='favoritesChanged($event)'
+      ></qad-sidenav-item>
     </div>
+  </ng-scrollbar>
 </div>

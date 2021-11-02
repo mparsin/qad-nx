@@ -38,6 +38,9 @@ import dashboard from '@iconify/icons-ic/twotone-dashboard';
 import eventAvailable from '@iconify/icons-ic/twotone-event-available';
 import callSplit from '@iconify/icons-ic/twotone-call-split';
 import dropbox from '@iconify/icons-fa-brands/dropbox';
+import star from '@iconify/icons-ic/twotone-star';
+import add from '@iconify/icons-ic/twotone-add';
+import icLibraryBooks from '@iconify/icons-ic/twotone-library-books';
 
 export const appIcons = {
   home,
@@ -80,4 +83,7 @@ export const appIcons = {
   event_available: eventAvailable,
   'fa-dropbox': dropbox,
   call_split: callSplit,
+  star: star,
+  add: add,
+  libraryBooks: icLibraryBooks,
 };

@@ -20,7 +20,6 @@ export class AuthGuard implements CanActivate {
   ): Observable<boolean> {
     return this.store.pipe(
       select(isLoggedInSelector),
-      tap(r => console.log('IsLoggedIn', r)),
       tap(loggedIn => {
         if (!loggedIn) {
           console.log('navigating to login...');

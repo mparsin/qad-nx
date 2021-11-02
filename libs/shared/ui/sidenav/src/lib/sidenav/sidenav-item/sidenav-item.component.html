@@ -1,61 +1,70 @@
-<a *ngIf="isLink(item) && !isFunction(item.route)"
-   [fragment]="item.fragment"
-   [routerLinkActiveOptions]="item.routerLinkActiveOptions || { exact: false }"
-   [routerLink]="item.route"
-   class="item"
+<a *ngIf='isLink(item) && !isFunction(item.route)'
+   [fragment]='item.fragment'
+   [routerLinkActiveOptions]='item.routerLinkActiveOptions || { exact: false }'
+   [routerLink]='item.route'
+   class='item'
    [class.sidenav-collapsed]='collapsed$ | async'
-   fxLayout="row"
+   [matTooltip]="item.documentation ? item.documentation : ''"
+   fxLayout='row'
    matRipple
-   routerLinkActive="active">
-  <mat-icon [icIcon]="getIcon(item)" class="item-icon" fxFlex="none"></mat-icon>
-<!--  <span>{{collapsed$ | async}}</span>-->
-  <span class="item-label" fxFlex="auto">{{ item.label }}</span>
-  <span *ngIf="item.badge"
-        [ngClass]="[item.badge.bgClass, item.badge.textClass]"
-        class="item-badge"
-        fxFlex="none">{{ item.badge.value }}</span>
+   routerLinkActive='active'>
+  <mat-icon [icIcon]='getIcon(item)' class='item-icon' fxFlex='none'></mat-icon>
+  <span class='item-label' fxFlex='auto'>{{ item.label }}</span>
+
+  <mat-icon *ngIf='item.isFavorite;else notFavorite' [icIcon]='icStar' class='item-favorite-selected'
+            fxFlex='none'></mat-icon>
+  <ng-template #notFavorite>
+    <mat-icon [icIcon]='icStar' class='item-favorite' fxFlex='none' matTooltip='Add to favorites'
+              (click)='toggleFavorites({event: $event, item: item});'></mat-icon>
+  </ng-template>
+
+
+  <span *ngIf='item.badge'
+        [ngClass]='[item.badge.bgClass, item.badge.textClass]'
+        class='item-badge'
+        fxFlex='none'>{{ item.badge.value }}</span>
 </a>
 
-<div (click)="item.route()"
-     *ngIf="isLink(item) && isFunction(item.route)"
+<div (click)='item.route()'
+     *ngIf='isLink(item) && isFunction(item.route)'
      [class.collapsed]='collapsed$ | async'
-     class="item"
-     fxLayout="row"
+     class='item'
+     fxLayout='row'
      matRipple
-     routerLinkActive="active">
-  <mat-icon [icIcon]="getIcon(item)" class="item-icon" fxFlex="none"></mat-icon>
-  <span class="item-label" fxFlex="auto">{{ item.label }}</span>
-  <span *ngIf="item.badge"
-        [ngClass]="[item.badge.bgClass, item.badge.textClass]"
-        class="item-badge"
-        fxFlex="none">{{ item.badge.value }}</span>
+     routerLinkActive='active'>
+  <mat-icon [icIcon]='getIcon(item)' class='item-icon' fxFlex='none'></mat-icon>
+  <span class='item-label' fxFlex='auto'>{{ item.label }}</span>
+  <span *ngIf='item.badge'
+        [ngClass]='[item.badge.bgClass, item.badge.textClass]'
+        class='item-badge'
+        fxFlex='none'>{{ item.badge.value }}</span>
 </div>
 
-<ng-container *ngIf="isDropdown(item)">
-  <div (click)="toggleOpen()"
-       [class.active]="isOpen || isActive"
-       [class.open]="isOpen"
+<ng-container *ngIf='isDropdown(item)'>
+  <div (click)='toggleOpen()'
+       [class.active]='isOpen || isActive'
+       [class.open]='isOpen'
        [class.collapsed]='collapsed$ | async'
-       class="item"
-       fxLayout="row"
+       class='item'
+       fxLayout='row'
        matRipple>
-    <mat-icon [icIcon]="getIcon(item)" class="item-icon" fxFlex="none"></mat-icon>
-    <span class="item-label" fxFlex="auto">{{ item.label }}</span>
-    <span *ngIf="item.badge"
-          [ngClass]="[item.badge.bgClass, item.badge.textClass]"
-          class="item-badge"
-          fxFlex="none">{{ item.badge.value }}</span>
-    <mat-icon [icIcon]="icKeyboardArrowRight" class="item-dropdown-icon" fxFlex="none"></mat-icon>
+    <mat-icon [icIcon]='getIcon(item)' class='item-icon' fxFlex='none'></mat-icon>
+    <span class='item-label' fxFlex='auto'>{{ item.label }}</span>
+    <span *ngIf='item.badge'
+          [ngClass]='[item.badge.bgClass, item.badge.textClass]'
+          class='item-badge'
+          fxFlex='none'>{{ item.badge.value }}</span>
+    <mat-icon [icIcon]='icKeyboardArrowRight' class='item-dropdown-icon' fxFlex='none'></mat-icon>
   </div>
-  <div [@dropdown]="isOpen" class="item-dropdown">
-    <qad-sidenav-item *ngFor="let subItem of item.children" [item]="subItem" [level]="level + 1" c></qad-sidenav-item>
+  <div [@dropdown]='isOpen' class='item-dropdown'>
+    <qad-sidenav-item *ngFor='let subItem of item.children' [item]='subItem' [level]='level + 1'></qad-sidenav-item>
   </div>
 </ng-container>
 
 
-<ng-container *ngIf="isSubheading(item)">
-  <div class="subheading">{{ item.label }}</div>
-  <qad-sidenav-item *ngFor="let subItem of item.children" [item]="subItem" [level]="0"
-                    [attr.data-cy]="subItem.label"></qad-sidenav-item>
+<ng-container *ngIf='isSubheading(item)'>
+  <div class='subheading'>{{ item.label }}</div>
+  <qad-sidenav-item *ngFor='let subItem of item.children' [item]='subItem' [level]='0'
+                    [attr.data-cy]='subItem.label'></qad-sidenav-item>
 </ng-container>
 

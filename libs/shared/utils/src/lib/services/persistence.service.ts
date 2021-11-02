@@ -36,7 +36,6 @@ export class PersistenceService {
   }
 
   setUser(user: CurrentUserInterface) {
-    console.log('setting user');
     this.set(this.AUTH_DATA, user);
   }
 

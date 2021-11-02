@@ -11,15 +11,14 @@ import icBusiness from '@iconify/icons-ic/twotone-business';
 import icCheckCircle from '@iconify/icons-ic/twotone-check-circle';
 import icChevronRight from '@iconify/icons-ic/twotone-chevron-right';
 import icDoNotDisturb from '@iconify/icons-ic/twotone-do-not-disturb';
-import icListAlt from '@iconify/icons-ic/twotone-list-alt';
 import icLock from '@iconify/icons-ic/twotone-lock';
 import icMoveToInbox from '@iconify/icons-ic/twotone-move-to-inbox';
 import icNotificationsOff from '@iconify/icons-ic/twotone-notifications-off';
 import icOfflineBolt from '@iconify/icons-ic/twotone-offline-bolt';
 import icPerson from '@iconify/icons-ic/twotone-person';
 import icSettings from '@iconify/icons-ic/twotone-settings';
-import icTableChart from '@iconify/icons-ic/twotone-table-chart';
 import icVerifiedUser from '@iconify/icons-ic/twotone-verified-user';
+import { translate } from '@ngneat/transloco';
 import { trackById } from '@qad-nx/shared-utils';
 import { Icon } from '@visurel/iconify-angular';
 import { PopoverRef } from 'libs/shared/ui/popover/src/lib/popover/popover-ref';
@@ -44,8 +43,8 @@ export class ToolbarUserDropdownComponent implements OnInit {
     {
       id: '1',
       icon: icAccountCircle,
-      label: 'My Profile',
-      description: 'Personal Information',
+      label: translate('eqms.user.profile_name'),
+      description: translate('eqms.user.profile_description'),
       colorClass: 'text-teal',
       route: '/apps/social',
     },
@@ -114,5 +113,11 @@ export class ToolbarUserDropdownComponent implements OnInit {
 
   close() {
     this.popoverRef.close(null);
+  }
+
+  logoutAndClose() {
+    // [routerLink]="['/auth']"
+    this.toolbarUserService.logout();
+    this.close();
   }
 }

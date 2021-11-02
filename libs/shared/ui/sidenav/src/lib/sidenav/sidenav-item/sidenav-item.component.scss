@@ -9,10 +9,18 @@
   padding: var(--padding-8) var(--sidenav-item-padding);
   position: relative;
   text-decoration: none;
-  transition: var(--trans-ease-out);
+  //transition: padding-inline-start 0.5s;
   user-select: none;
   width: 100%;
   border-left: var(--sidenav-item-border);
+
+  .item-favorite {
+    display: none;
+  }
+
+  .item-favorite-selected {
+    color: var(--sidenav-item-icon-color);
+  }
 
   &:hover, &.active {
     background: var(--sidenav-item-background-active);
@@ -28,6 +36,9 @@
 
     .item-dropdown-icon {
       color: var(--sidenav-item-color-active);
+    }
+    .item-favorite {
+      display: block;
     }
   }
 

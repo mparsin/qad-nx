@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { translate, TranslocoService } from '@ngneat/transloco';
+import { TranslocoService } from '@ngneat/transloco';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Store } from '@ngrx/store';
 import { loginSuccessAction } from '@qad-nx/eqms-auth-data-access';
 import { NavigationService, PersistenceService } from '@qad-nx/shared-utils';
 import { filter } from 'rxjs/operators';
-import icLayers from '@iconify/icons-ic/twotone-layers';
-import icAssigment from '@iconify/icons-ic/twotone-assignment';
 
 @UntilDestroy()
 @Component({
@@ -41,7 +39,6 @@ export class AppComponent {
       )
       .subscribe(() => {
         const translations = translocoService.translateObject('eqms');
-        console.log(translations);
         this.setItems();
       });
     // translocoService.langChanges$.pipe(untilDestroyed(this)).subscribe(event => {
@@ -51,25 +48,25 @@ export class AppComponent {
   }
 
   private setItems() {
-    this.navigationService.setItems([
-      {
-        type: 'link',
-        label: translate('eqms.dashboard'),
-        route: '/',
-        icon: icLayers,
-      },
-      {
-        type: 'subheading',
-        label: 'Layout',
-        children: [
-          {
-            type: 'link',
-            label: translate('eqms.all_in_one_table'),
-            route: '/test',
-            icon: icAssigment,
-          },
-        ],
-      },
-    ]);
+    // this.navigationService.setItems([
+    //   {
+    //     type: 'link',
+    //     label: translate('eqms.dashboard'),
+    //     route: '/',
+    //     icon: icLayers,
+    //   },
+    //   {
+    //     type: 'subheading',
+    //     label: 'Layout',
+    //     children: [
+    //       {
+    //         type: 'link',
+    //         label: translate('eqms.all_in_one_table'),
+    //         route: '/test',
+    //         icon: icAssigment,
+    //       },
+    //     ],
+    //   },
+    // ]);
   }
 }

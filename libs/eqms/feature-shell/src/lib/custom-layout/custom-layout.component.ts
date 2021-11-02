@@ -5,17 +5,15 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { select, Store } from '@ngrx/store';
 import {
   currentUserSelector,
-  isLoggedInSelector,
-  loginSuccessAction,
+  logoutAction,
 } from '@qad-nx/eqms-auth-data-access';
 import {
   checkRouterChildsData,
   ConfigService,
   LayoutService,
-  PersistenceService,
 } from '@qad-nx/shared-utils';
 import { IconService } from '@visurel/iconify-angular';
-import { loadNavigation } from 'libs/eqms/nav/data-access/src/lib/store/navigation.action';
+import { ToolbarUserService } from 'libs/shared/ui/toolbar-user/src/lib/services/toolbar-user.service';
 import { appIcons } from 'libs/shared/utils/src/lib/icons/app.icons';
 import { filter, map, startWith, tap } from 'rxjs/operators';
 
@@ -52,10 +50,10 @@ export class CustomLayoutComponent implements OnInit {
     private router: Router,
     private store: Store,
     private iconService: IconService,
-    private persistentService: PersistenceService
+    private toolbarUserService: ToolbarUserService
   ) {
     iconService.registerAll(appIcons);
-    store.dispatch(loadNavigation());
+    // store.dispatch(loadNavigation());
   }
 
   ngOnInit(): void {
@@ -63,7 +61,14 @@ export class CustomLayoutComponent implements OnInit {
       .pipe(
         select(currentUserSelector),
         untilDestroyed(this),
-        tap(r => (this.user = r!.fullName))
+        tap(r => (this.user = r ? r.fullName : 'unknown'))
+      )
+      .subscribe();
+
+    this.toolbarUserService.logout$
+      .pipe(
+        untilDestroyed(this),
+        tap(() => this.store.dispatch(logoutAction()))
       )
       .subscribe();
   }

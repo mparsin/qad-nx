@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
@@ -16,8 +17,8 @@ import { SidenavItemComponent } from './sidenav-item.component';
     MatRippleModule,
     IconModule,
     FlexLayoutModule,
+    MatTooltipModule,
   ],
-  exports: [SidenavItemComponent]
+  exports: [SidenavItemComponent],
 })
-export class SidenavItemModule {
-}
+export class SidenavItemModule {}

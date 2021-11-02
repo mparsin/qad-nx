@@ -6,12 +6,15 @@ export type NavigationItem =
   | NavigationSubheading;
 
 export interface NavigationLink {
+  id: number;
   type: 'link';
   route: string | any;
   fragment?: string;
   label: string;
   icon: Icon;
   color?: string;
+  isFavorite?: boolean;
+  documentation?: string;
   routerLinkActiveOptions?: { exact: boolean };
   badge?: {
     value: string;

@@ -7,11 +7,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { RouterModule } from '@angular/router';
 import { SharedUiToolbarUserModule } from '@qad-nx/shared/ui/toolbar-user';
 import { IconModule } from '@visurel/iconify-angular';
+import { LanguagesComponent } from 'libs/shared/ui/toolbar/src/lib/languages-menu/languages.component';
 import { ToolbarNotificationsModule } from 'libs/shared/ui/toolbar/src/lib/toolbar/toolbar-notifications/toolbar-notifications.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
-  declarations: [ToolbarComponent],
+  declarations: [ToolbarComponent, LanguagesComponent],
   imports: [
     CommonModule,
     ExtendedModule,
@@ -23,7 +24,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatButtonModule,
     ToolbarNotificationsModule,
     SharedUiToolbarUserModule,
+    IconModule,
   ],
-  exports: [ToolbarComponent],
+  exports: [ToolbarComponent, LanguagesComponent],
 })
 export class SharedUiToolbarModule {}

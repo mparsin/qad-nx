@@ -67,3 +67,7 @@
 .sidenav-items {
   // padding-top: var(--padding);
 }
+
+::ng-deep.ng-scroll-content {
+  width: var(--sidenav-width);
+}

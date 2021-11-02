@@ -1,5 +1,12 @@
 {
   "hello_eqms": "Hello from EQMS",
   "dashboard": "Приборная панель",
-  "all_in_one_table": "Универсальный стол"
+  "all_in_one_table": "Универсальный стол",
+  "good": "Доброе",
+  "morning": "yтро",
+  "afternoon": "день",
+  "user": {
+    "profile_name": "Мой профиль",
+    "profile_description": "Персональная информация"
+  }
 }

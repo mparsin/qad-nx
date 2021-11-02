@@ -13,9 +13,8 @@ export class AuthEffects {
   login$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(loginSuccessAction),
-        tap(r => console.log('Login success', r)),
-        tap(r => this.router.navigate([r.redirectUrl]))
+        ofType(loginSuccessAction)
+        // tap(r => this.router.navigate([r.redirectUrl]))
         // mergeMap(() => this.moviesService.getAll()
         //   .pipe(
         //     map(movies => ({ type: '[Movies API] Movies Loaded Success', payload: movies })),
@@ -32,7 +31,7 @@ export class AuthEffects {
         ofType(logoutAction),
         tap(() => {
           this.persistenceService.removeToken();
-          this.router.navigateByUrl('/auth/login');
+          this.router.navigateByUrl('/auth');
         })
       );
     },

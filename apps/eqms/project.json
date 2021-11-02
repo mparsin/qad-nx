@@ -28,8 +28,7 @@
           "apps/eqms/src/styles.scss"
         ],
         "scripts": [],
-        "allowedCommonJsDependencies": [
-        ],
+        "allowedCommonJsDependencies": [],
         "preserveSymlinks": true
       },
       "configurations": {

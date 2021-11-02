@@ -1,5 +1,12 @@
 {
   "hello_eqms": "Hello from EQMS!!!",
   "dashboard": "Dashboard",
-  "all_in_one_table": "All-In-One Table"
+  "all_in_one_table": "All-In-One Table",
+  "good": "Good",
+  "morning": "Morning",
+  "afternoon": "Afternoon",
+  "user": {
+    "profile_name": "My Profile",
+    "profile_description": "Personal Information"
+  }
 }

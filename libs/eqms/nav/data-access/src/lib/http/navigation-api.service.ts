@@ -17,7 +17,7 @@ export class NavigationApiService {
 
   loadNavigationProcesses(
     search: string = ''
-  ): Observable<Array<NavigationLink | NavigationDropdown>> {
+  ): Observable<Array<NavigationDropdown>> {
     return this.httpClient
       .get(this.baseUrl + `/navigation?filter=${search}`)
       .pipe(
@@ -28,12 +28,14 @@ export class NavigationApiService {
             items.map((ng: any) => ({
               //TODO: add type
               label: ng.name,
+              id: ng.id,
               route: '',
               type: 'dropdown',
               icon: ng.icon_fa === '' ? 'description' : ng.icon_fa,
               children: ng.navigationItems?.map((ni: any) => ({
                 //TODO: add type
                 label: ni.name,
+                id: ni.id,
                 type: 'link',
                 route: `process/${ni.systemName}`,
                 color: ni.processColor ?? '#FFF',

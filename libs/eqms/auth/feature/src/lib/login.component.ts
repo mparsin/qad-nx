@@ -44,7 +44,6 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.authStore.logoutEffect();
     this.form = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],

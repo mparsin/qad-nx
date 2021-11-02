@@ -1,5 +1,4 @@
 {
-  "hello": "Hello world!",
   "configuration_panel": {
     "configuration": "Configuration",
     "dark_mode": "Dark Mode",
@@ -14,5 +13,11 @@
     "light": "light",
     "default": "default",
     "dark": "dark"
-  }
+  },
+  "greetings": {
+    "good_morning": "Good Morning",
+    "good_afternoon": "Good Afternoon",
+    "good_evening": "Good Evening"
+  },
+  "my_favorites": "My Favorites"
 }

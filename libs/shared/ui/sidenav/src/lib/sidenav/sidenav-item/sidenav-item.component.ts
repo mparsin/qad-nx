@@ -9,6 +9,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import icKeyboardArrowRight from '@iconify/icons-ic/twotone-keyboard-arrow-right';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import {
   LayoutService,
@@ -17,17 +18,11 @@ import {
   NavigationLink,
   NavigationService,
 } from '@qad-nx/shared-utils';
-import { dropdownAnimation } from 'libs/shared/animations/src/lib/dropdown.animation';
-import {
-  filter,
-  combineLatest,
-  withLatestFrom,
-  tap,
-  map,
-} from 'rxjs/operators';
-import icKeyboardArrowRight from '@iconify/icons-ic/twotone-keyboard-arrow-right';
 
 import { Icon } from '@visurel/iconify-angular';
+import { dropdownAnimation } from 'libs/shared/animations/src/lib/dropdown.animation';
+import { appIcons } from 'libs/shared/utils/src/lib/icons/app.icons';
+import { filter, map, withLatestFrom } from 'rxjs/operators';
 
 @UntilDestroy()
 @Component({
@@ -40,6 +35,7 @@ import { Icon } from '@visurel/iconify-angular';
 export class SidenavItemComponent implements OnInit, OnChanges {
   @Input() item!: NavigationItem;
   @Input() level = 0;
+
   collapsed$ = this.layoutService.sidenavCollapsedOpen$.pipe(
     withLatestFrom(this.layoutService.sidenavCollapsed$),
     map(([first, second]) => {
@@ -53,6 +49,7 @@ export class SidenavItemComponent implements OnInit, OnChanges {
   isLink = this.navigationService.isLink;
   isDropdown = this.navigationService.isDropdown;
   isSubheading = this.navigationService.isSubheading;
+  icStar: Icon = appIcons.star;
 
   constructor(
     private router: Router,
@@ -157,5 +154,15 @@ export class SidenavItemComponent implements OnInit, OnChanges {
 
   getIcon(item: NavigationLink | NavigationDropdown): Icon | string {
     return item.icon ? item.icon : '';
+  }
+
+  toggleFavorites(params: { event: Event; item: NavigationItem }) {
+    params.event.preventDefault();
+    params.event.stopPropagation();
+    if (this.item.type === 'link') {
+      this.navigationService.addToFavorites(this.item);
+      console.log('Add to favorites', params.item);
+    }
+    return false;
   }
 }
