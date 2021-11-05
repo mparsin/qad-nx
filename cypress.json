@@ -1,0 +1,8 @@
+{
+  "baseUrl": "http://localhost:5001",
+  "viewportWidth": 2560,
+  "viewportHeight": 1440,
+  "waitForAnimations": true,
+  "animationDistanceThreshold": 10,
+  "defaultCommandTimeout": 4000
+}

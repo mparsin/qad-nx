@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { NavigationEnd, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { select, Store } from '@ngrx/store';
+import { environment } from '@qad-nx/eqms';
 import {
   currentUserSelector,
   logoutAction,
@@ -50,9 +52,11 @@ export class CustomLayoutComponent implements OnInit {
     private router: Router,
     private store: Store,
     private iconService: IconService,
-    private toolbarUserService: ToolbarUserService
+    private toolbarUserService: ToolbarUserService,
+    private titleService: Title
   ) {
     iconService.registerAll(appIcons);
+    titleService.setTitle(environment.title);
     // store.dispatch(loadNavigation());
   }
 

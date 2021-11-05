@@ -1,0 +1,24 @@
+.login-info-container {
+  background-image: url(https://www.qad.com/blog/wp-content/uploads/2021/10/10_19_2021_B.png);
+  background-size: cover;
+  padding: 0;
+}
+
+.login-info {
+  background-color: rgba(var(--color-primary), .8);
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  margin: 0;
+  color:white;
+}
+
+.login-container {
+  float: none;
+  position: relative;
+  display: block;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}

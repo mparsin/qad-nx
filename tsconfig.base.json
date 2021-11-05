@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@qad-nx/eqms": ["apps/eqms/src/index.ts"],
       "@qad-nx/eqms-auth-data-access": [
         "libs/eqms/auth/data-access/src/index.ts"
       ],

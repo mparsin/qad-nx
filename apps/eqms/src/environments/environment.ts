@@ -4,21 +4,22 @@
 
 export const environment = {
   production: false,
+  title: 'EQMS',
   apiUrl: 'http://localhost:55540/api',
   availableEnvironments: [
     {
       name: 'local',
-      apiUrl: 'http://localhost:55540/api'
+      apiUrl: 'http://localhost:55540/api',
     },
     {
       name: 'oslo-end-user',
-      apiUrl: 'https://cont642.qad.com/oslo/rt/EndUser/API/api'
+      apiUrl: 'https://cont642.qad.com/oslo/rt/EndUser/API/api',
     },
     {
       name: 'oslo-engineering',
-      apiUrl: 'https://cont642.qad.com/oslo/rt/Engineering/API/api'
+      apiUrl: 'https://cont642.qad.com/oslo/rt/Engineering/API/api',
     },
-  ]
+  ],
 };
 
 /*

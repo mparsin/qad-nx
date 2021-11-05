@@ -5,11 +5,12 @@
    class='item'
    [class.sidenav-collapsed]='collapsed$ | async'
    [matTooltip]="item.documentation ? item.documentation : ''"
+   data-cy='nav-link'
    fxLayout='row'
    matRipple
    routerLinkActive='active'>
   <mat-icon [icIcon]='getIcon(item)' class='item-icon' fxFlex='none'></mat-icon>
-  <span class='item-label' fxFlex='auto'>{{ item.label }}</span>
+  <span class='item-label' fxFlex='auto' [attr.data-cy]='item.route'>{{ item.label }}</span>
 
   <mat-icon *ngIf='item.isFavorite;else notFavorite' [icIcon]='icStar' class='item-favorite-selected'
             fxFlex='none'></mat-icon>
@@ -45,6 +46,7 @@
        [class.active]='isOpen || isActive'
        [class.open]='isOpen'
        [class.collapsed]='collapsed$ | async'
+       data-cy='nav-dropdown'
        class='item'
        fxLayout='row'
        matRipple>

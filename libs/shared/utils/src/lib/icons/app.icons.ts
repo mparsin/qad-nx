@@ -16,7 +16,7 @@ import dotCircleO from '@iconify/icons-fa-regular/dot-circle';
 import wrench from '@iconify/icons-fa-solid/wrench';
 import puzzlePiece from '@iconify/icons-fa-solid/puzzle-piece';
 import search from '@iconify/icons-fa-solid/search';
-import balanceScale from '@iconify/icons-fa-solid/balance-scale';
+import balanceScale from '@iconify/icons-ic/twotone-balance';
 import fileTextO from '@iconify/icons-fa-solid/file-code';
 import idCard from '@iconify/icons-fa-solid/id-card';
 import book from '@iconify/icons-fa-solid/book';
@@ -41,6 +41,9 @@ import dropbox from '@iconify/icons-fa-brands/dropbox';
 import star from '@iconify/icons-ic/twotone-star';
 import add from '@iconify/icons-ic/twotone-add';
 import icLibraryBooks from '@iconify/icons-ic/twotone-library-books';
+import icLocalHospital from '@iconify/icons-ic/twotone-local-hospital';
+import icDonutSmall from '@iconify/icons-ic/twotone-donut-small';
+import icPeople from '@iconify/icons-ic/twotone-people';
 
 export const appIcons = {
   home,
@@ -86,4 +89,7 @@ export const appIcons = {
   star: star,
   add: add,
   libraryBooks: icLibraryBooks,
+  local_hospital: icLocalHospital,
+  donut_small: icDonutSmall,
+  people: icPeople,
 };

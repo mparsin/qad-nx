@@ -5,9 +5,11 @@ import {
   OnInit,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import icVisibility from '@iconify/icons-ic/twotone-visibility';
 import icVisibilityOff from '@iconify/icons-ic/twotone-visibility-off';
 import { AuthStore, LoginInfoStore } from '@qad-nx/eqms-auth-data-access';
+import { environment } from '@qad-nx/eqms';
 import {
   fadeInRight400ms,
   fadeInUp400ms,
@@ -40,7 +42,8 @@ export class LoginComponent implements OnInit {
     private authStore: AuthStore,
     private loginInfoStore: LoginInfoStore,
     private cd: ChangeDetectorRef,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
@@ -49,13 +52,16 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required],
       // selectedEnvironment: ['', Validators.required],
     });
+    this.titleService.setTitle(`${environment.title} - Login`);
   }
 
   send() {
-    this.authStore.loginEffect({
-      username: this.form.value.username,
-      password: this.form.value.password,
-    });
+    if (this.form.valid) {
+      this.authStore.loginEffect({
+        username: this.form.value.username,
+        password: this.form.value.password,
+      });
+    }
   }
 
   toggleVisibility() {

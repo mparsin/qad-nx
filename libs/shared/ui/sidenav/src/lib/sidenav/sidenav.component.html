@@ -18,7 +18,7 @@
   <mat-progress-bar mode='indeterminate' *ngIf='isLoading$ | async'></mat-progress-bar>
   <mat-form-field class='w-full px-2 py-1' appearance='fill'>
     <mat-label class='text-primary'>Filter</mat-label>
-    <input matInput type='text' [(ngModel)]='filter' (ngModelChange)='onFilterChanged()'>
+    <input matInput type='text' [(ngModel)]='filter' (ngModelChange)='onFilterChanged()' data-cy='filter-box'>
     <button *ngIf='filter' matSuffix mat-icon-button aria-label='Clear' (click)="filter=''; onFilterChanged()">
       <mat-icon>close</mat-icon>
     </button>
