@@ -1,0 +1,17 @@
+<div class="vex-mail-header-overflow flex-none flex items-center">
+  <button class="w-full" mat-raised-button type="button">ADD NEW</button>
+</div>
+<div @stagger class='section'>
+  <h5 @fadeInUp class='subheading'>OPTIONS</h5>
+  <div class='section-content'>
+  <h5 class='subheading'>PAGING</h5>
+    <mat-slide-toggle color='primary' [checked]='isPager' (change)='pagerChanged($event)'>Pager</mat-slide-toggle>
+  </div>
+</div>
+<div class='section'>
+  <h5 @fadeInUp class='subheading'>FILTER</h5>
+  <mat-slide-toggle>Filter Bar</mat-slide-toggle>
+</div>
+<div @stagger class='section'>
+  <h5 @fadeInUp class='subheading'>LAYOUTS</h5>
+</div>

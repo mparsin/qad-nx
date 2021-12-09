@@ -3,13 +3,12 @@ import icSearch from '@iconify/icons-ic/twotone-search';
 import { TranslocoService } from '@ngneat/transloco';
 import { select, Store } from '@ngrx/store';
 import { currentUserSelector } from '@qad-nx/eqms-auth-data-access';
-import { fadeInUp400ms } from '@qad-nx/shared-animations';
+import { fadeInUp400ms, stagger40ms } from '@qad-nx/shared-animations';
 import { Icon } from '@visurel/iconify-angular';
 import {
   favoriteSelector,
   navFeatureSelector,
 } from 'libs/eqms/nav/data-access/src/lib/store/navigation.selector';
-import { stagger40ms } from 'libs/shared/animations/src/lib/stagger.animation';
 import { appIcons } from 'libs/shared/utils/src/lib/icons/app.icons';
 import { map, switchMap, timer } from 'rxjs';
 

@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'eqms-search-feature-search-page',
+  displayName: 'eqms-search-feature-search-pageNumber',
   preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,7 @@ module.exports = {
     },
   },
   coverageDirectory:
-    '../../../../../coverage/libs/eqms/search/feature/search-page',
+    '../../../../../coverage/libs/eqms/search/feature/search-pageNumber',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

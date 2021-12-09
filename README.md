@@ -20,17 +20,23 @@ Qad Inc. Mono repository(https://qad.com).
 [tailwind]: https://tailwindcss.com/
 [AngularMaterial]: https://material.angular.io/
 
+#Nx
+We use an Nx [Nx]-based workspace to implement the defined architecture. This workspace is an extension for Angular CLI, which helps to break down a solution into different applications and libraries
 
 #EQMS
 
 ### Principles
+
+
 All components are following:
 
 - OnPush Change Detection and async pipes: all components use observable and async pipe for rendering data without any manual subscribe.
 - SCAMs (single component Angular modules) for tree-shakable components, meaning each component will have a respective module. For example, a LoginComponent will have a corresponding LoginModule. We won't declare LoginComponent as part of AuthModule, for instance.
 - Mostly, everything will stay in the `libs` folder. New modules, new models, new configurations, new components etc... are in libs. libs should be separated into different directories based on existing apps. We won't put them inside the apps folder. 
 
-### Structure
+### Structure and code organization
+The solution shown here puts all applications into one apps folder, while grouping all the reusable libraries by the respective domain name in the libs folder:
+
 ```
 .
 └── root
@@ -38,39 +44,39 @@ All components are following:
     │   ├── eqms
     ├── └── eqms-e2e (cypress end to end testin)
     └── libs
-        └── web (dir)
-            ├── shell (dir)
-            │   ├── feature (angular:lib) - for configure any forRoot modules
-            │   └── ui
-            │       └── layout (angular:lib)
-            ├── settings (dir)
-            │   ├── feature (angular:lib) - for configure and persist all settings
-            │   └── data-access (workspace:lib) - store and services for settings module
-            ├── playlist (dir)
-            │   ├── data-access (angular:lib, service, state management)
-            │   ├── features
-            │   │   ├── list (angular:lib PlaylistsComponent)
-            │   │   └── detail (angular:lib PlaylistDetailComopnent)
-            │   └── ui (dir)
-            │       └── playlist-track (angular:lib, SCAM for Component)
-            ├── visualizer (dir)
-            │   ├── data-access (angular:lib)
-            │   ├── feature
-            │   └── ui (angular:lib)
-            ├── home (dir)
-            │   ├── data-access (angular:lib)
-            │   ├── feature (angular:lib)
-            │   └── ui (dir)
-            │       ├── featured-playlists (angular:lib, SCAM for Component)
-            │       ├── greeting (angular:lib, SCAM for Component)
-            │       └── recent-played (angular:lib, SCAM for Component)
-            └── shared (dir)
-                ├── app-config (injection token for environment)
-                ├── data-access (angular:lib, API call, Service or State management to share across the Client app)
-                ├── ui (dir)
-                ├── pipes (dir)
-                ├── directives (dir)
-                └── utils (angular:lib, usually shared Guards, Interceptors, Validators...)
+        ├── eqms (dir) - eqms specific components and services
+        │   │   └── ui
+        │   ├── shell (dir)
+        │   │       └── layout (angular:lib)
+        │   │   ├── feature (angular:lib) - for configure any forRoot modules
+        │   ├── settings (dir)
+        │   │   ├── feature (angular:lib) - for configure and persist all settings
+        │   │   └── data-access (workspace:lib) - store and services for settings module
+        │   ├── playlist (dir)
+        │   │   ├── data-access (angular:lib, service, state management)
+        │   │   ├── features
+        │   │   │   ├── list (angular:lib PlaylistsComponent)
+        │   │   │   └── detail (angular:lib PlaylistDetailComopnent)
+        │   │   └── ui (dir)
+        │   │       └── playlist-track (angular:lib, SCAM for Component)
+        │   ├── visualizer (dir)
+        │   │   ├── data-access (angular:lib)
+        │   │   ├── feature
+        │   │   └── ui (angular:lib)
+        │   ├── home (dir)
+        │   │   ├── data-access (angular:lib)
+        │   │   ├── feature (angular:lib)
+        │   │   └── ui (dir)
+        │   │       ├── featured-playlists (angular:lib, SCAM for Component)
+        │   │       ├── greeting (angular:lib, SCAM for Component)
+        │   │       └── recent-played (angular:lib, SCAM for Component)
+        └── shared (dir) - cross domain components and services
+            ├── app-config (injection token for environment)
+            ├── data-access (angular:lib, API call, Service or State management to share across the Client app)
+            ├── ui (dir)
+            ├── pipes (dir)
+            ├── directives (dir)
+            └── utils (angular:lib, usually shared Guards, Interceptors, Validators...)
                 
 ```
 ### Library Types
@@ -79,7 +85,7 @@ All components are following:
 - Data-access Libraries
 
 #### Feature Libraries
-A feature library contains a set of files that configure a business use case or a page in an application. Most of the components in such a library are smart components that interact with data sources. This type of library also contains most of the UI logic, form validation code, etc. Feature libraries are almost always app-specific and are often lazy-loaded.
+A feature library contains a set of files that configure a business use case. Most of the components in such a library are smart components that interact with data sources. This type of library also contains most of the UI logic, form validation code, etc. Feature libraries are almost always app-specific and are often lazy-loaded.
 
 #### UI Libraries
 A UI library is a collection of related presentational components. There are generally no services injected into these components (all of the data they need should come from Inputs).
@@ -89,17 +95,21 @@ Data-access libraries contain code that function as client-side delegate layers 
 
 ### Dependency Graph
 
-Nx provides an [dependency graph][dep-graph-nx] out of the box. To view it on your browser, clone my repository and run:
+Nx provides an [dependency graph][dep-graph-nx] out of the box. To view it on your browser run:
 
 ```bash
 npm run dep-graph
 ```
+Nx will generate a dependency graph, similar to the following:
+
+<img src="doc/dep-graph.png" width="800">
+
 
 ### Package Manager
-pnpm
+yarn
 
 To install use this command
-```npm i pnpm```
+```npm i yarn```
 
 [Naming conventions](doc/naming.md)
 
@@ -107,8 +117,14 @@ To install use this command
 
 - `git clone https://github.com/mparsin/qad-nx.git`
 - `cd qad-nx`
-- `pnpm start` for starting Angular web application
+- `yarn start` for starting Angular web application
 - The app should run on `http://localhost:5200/`
+
+## NgRx
+
+To manage state EQMS can use either full NgRx store or local ComponentStore. When deciding which one to use this rule:
+- use NgRx Store when managing global state (state shared between group of components)
+- use ComponentStore for managing smaller, more local state.  
 
 ## Version control
 
@@ -130,3 +146,4 @@ References:
 - https://www.conventionalcommits.org/
 - https://seesparkbox.com/foundry/semantic_commit_messages
 - http://karma-runner.github.io/1.0/dev/git-commit-msg.html
+

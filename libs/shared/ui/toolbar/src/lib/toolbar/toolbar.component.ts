@@ -29,6 +29,7 @@ export class ToolbarComponent implements OnInit {
   @Input()
   @HostBinding('class.shadow-b')
   hasShadow: boolean | null = false;
+  title$ = this.configService.config$.pipe(map(config => config.sidenav.title));
 
   // navigationItems$ = this.navigationService.items$;
 

@@ -11,7 +11,7 @@ describe('Login Page', () => {
     cy.wait('@login');
   });
 
-  it('Should open login page', () => {
+  it('Should open login pageNumber', () => {
     cy.get('.title').should('be.visible');
   });
 

@@ -4,7 +4,7 @@ import { ActionTypes } from './actionTypes';
 
 export const loginSuccessAction = createAction(
   ActionTypes.LOGIN_SUCCESS,
-  props<{ currentUser: CurrentUserInterface; redirectUrl: string }>()
+  props<{ currentUser: CurrentUserInterface; redirectUrl?: string }>()
 );
 
 export const logoutAction = createAction(ActionTypes.LOGOUT);

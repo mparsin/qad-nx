@@ -45,7 +45,7 @@ import icLocalHospital from '@iconify/icons-ic/twotone-local-hospital';
 import icDonutSmall from '@iconify/icons-ic/twotone-donut-small';
 import icPeople from '@iconify/icons-ic/twotone-people';
 
-export const appIcons = {
+export const appIcons: any = {
   home,
   'group-add': groupAdd,
   'bell-slash': bellSlash,

@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe('Login Page', () => {
-  it.only('Should open login page', () => {
+  it.only('Should open login pageNumber', () => {
     cy.fixture('LoginInfo.txt').as('LoginInfo');
     cy.server();
     cy.route(
@@ -34,7 +34,7 @@ describe('Login Page', () => {
       '@LoginInfo'
     ).as('login');
     cy.intercept('POST', '**/api/token', {
-      fixture: 'token.json'
+      fixture: 'token.json',
     });
     cy.visit('/');
 
@@ -53,7 +53,7 @@ describe('Login Page', () => {
     );
 
     cy.intercept('POST', '**/api/token', {
-      fixture: 'token.json'
+      fixture: 'token.json',
     });
     cy.visit('/');
 
@@ -66,23 +66,23 @@ describe('Login Page', () => {
 
   it('Should be able to login', () => {
     cy.intercept('**/api/environmentInfo/loginInfo?convertToHtml=false', {
-      fixture: 'loginInfo.txt'
+      fixture: 'loginInfo.txt',
     });
 
     cy.intercept('GET', '**/api/navigation*', {
-      fixture: 'navigation.json'
+      fixture: 'navigation.json',
     });
 
     cy.intercept('GET', '**/api/actionList/groups/*', {
-      fixture: 'actions.json'
+      fixture: 'actions.json',
     });
 
     cy.intercept('POST', '**/api/token', {
-      fixture: 'token.json'
+      fixture: 'token.json',
     });
 
     cy.intercept('PUT', '**/api/dashboard', {
-      fixture: 'dashboards.json'
+      fixture: 'dashboards.json',
     }).as('getDashboards');
 
     cy.visit('/');
@@ -108,7 +108,7 @@ describe('Login Page', () => {
   it.skip('Should clear auth data from local storage on logout', () => {
     const key = 'auth_data';
     localStorage.setItem(key, 'some value');
-    cy.visit('/auth/login').then((r) => {
+    cy.visit('/auth/login').then(r => {
       expect(localStorage.getItem(key)).to.be.null;
     });
   });
@@ -117,23 +117,23 @@ describe('Login Page', () => {
     const origUrl = 'dashboards/processes';
 
     cy.intercept('**/api/environmentInfo/loginInfo?convertToHtml=false', {
-      fixture: 'loginInfo.txt'
+      fixture: 'loginInfo.txt',
     });
 
     cy.intercept('POST', '**/api/token', {
-      fixture: 'token.json'
+      fixture: 'token.json',
     });
 
     cy.intercept('PUT', '**/api/dashboard', {
-      fixture: 'dashboards.json'
+      fixture: 'dashboards.json',
     }).as('getDashboards');
 
     cy.intercept('GET', '**/api/navigation*', {
-      fixture: 'navigation.json'
+      fixture: 'navigation.json',
     });
 
     cy.intercept('GET', '**/api/actionList/groups/*', {
-      fixture: 'actions.json'
+      fixture: 'actions.json',
     });
 
     cy.visit(origUrl);
@@ -149,7 +149,7 @@ describe('Login Page', () => {
 
   it.only('Should hide password by default', () => {
     cy.fixture('LoginInfo.txt').as('LoginInfo');
-    cy.server()
+    cy.server();
     cy.route(
       '**/api/environmentInfo/loginInfo?convertToHtml=false',
       '@LoginInfo'
@@ -160,9 +160,8 @@ describe('Login Page', () => {
   });
 
   it.only('Should reveal password when toggle button pressed', () => {
-
     cy.fixture('LoginInfo.txt').as('LoginInfo');
-    cy.server()
+    cy.server();
     cy.route(
       '**/api/environmentInfo/loginInfo?convertToHtml=false',
       '@LoginInfo'
@@ -176,9 +175,8 @@ describe('Login Page', () => {
   });
 
   it.only('Should send a correct payload to the login endpoint', () => {
-
     cy.fixture('LoginInfo.txt').as('LoginInfo');
-    cy.server()
+    cy.server();
     cy.route(
       '**/api/environmentInfo/loginInfo?convertToHtml=false',
       '@LoginInfo'
@@ -195,7 +193,7 @@ describe('Login Page', () => {
 
     cy.wait('@token');
 
-    cy.get('@token').then((xhr) => {
+    cy.get('@token').then(xhr => {
       console.log(xhr);
       expect(xhr.status).to.equal(200);
       expect(xhr.request.body).to.contain('username=igor');

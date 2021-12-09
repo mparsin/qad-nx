@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { NavigationDropdown, NavigationLink } from '@qad-nx/shared-utils';
+import { NavigationDropdown } from '@qad-nx/shared-utils';
 
 export const loadNavigation = createAction('[Nav]Load Navigation');
 

@@ -127,7 +127,7 @@ export class LayoutComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     /**
-     * Enable Scrolling to specific parts of the page using the Router
+     * Enable Scrolling to specific parts of the pageNumber using the Router
      */
     this.router.events
       .pipe(

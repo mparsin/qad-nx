@@ -8,7 +8,7 @@ import { select, Store } from '@ngrx/store';
 import { AppState } from '@qad-nx/eqms-feature-shell';
 import { loadNavigation } from '@qad-nx/eqms/nav/data-access';
 import { isLoadedSelector } from 'libs/eqms/nav/data-access/src/lib/store/navigation.selector';
-import { filter, first, tap } from 'rxjs';
+import { first, tap } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class NavigationResolver implements Resolve<any> {

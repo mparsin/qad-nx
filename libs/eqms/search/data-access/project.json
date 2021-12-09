@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/eqms/search/data-access",
+  "sourceRoot": "libs/eqms/search/data-access/src",
+  "prefix": "qad",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/eqms/search/data-access"],
+      "options": {
+        "jestConfig": "libs/eqms/search/data-access/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/eqms/search/data-access/src/**/*.ts",
+          "libs/eqms/search/data-access/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

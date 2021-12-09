@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FlexModule } from '@angular/flex-layout';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { EffectsModule } from '@ngrx/effects';
 import { SharedUiMessagesModule } from '@qad-nx/shared/ui/messages';
 import { LoginComponent } from './login.component';
@@ -18,7 +20,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { IconModule } from '@visurel/iconify-angular';
 import { MatInputModule } from '@angular/material/input';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MarkdownModule } from 'ngx-markdown';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -33,7 +34,6 @@ const ROUTES: Route[] = [
   declarations: [LoginComponent],
   imports: [
     CommonModule,
-    FlexLayoutModule,
     FormsModule,
     RouterModule.forChild(ROUTES),
     StoreModule.forFeature(authFeatureKey, reducers),
@@ -49,6 +49,8 @@ const ROUTES: Route[] = [
     MarkdownModule.forRoot(),
     MatButtonModule,
     SharedUiMessagesModule,
+    MatTooltipModule,
+    FlexModule,
   ],
   exports: [],
 })

@@ -24,7 +24,7 @@ export class AppComponent {
     const user = persistentService.getUser();
     if (user) {
       store.dispatch(
-        loginSuccessAction({ currentUser: user, redirectUrl: '' })
+        loginSuccessAction({ currentUser: user, redirectUrl: undefined })
       );
     }
     translocoService.load('en').pipe(untilDestroyed(this)).subscribe();

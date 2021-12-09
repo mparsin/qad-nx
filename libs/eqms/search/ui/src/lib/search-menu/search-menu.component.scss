@@ -1,0 +1,27 @@
+:host {
+  display: block;
+}
+
+.section {
+  border-bottom: 1px solid var(--foreground-divider);
+  margin-bottom: var(--padding-8);
+  margin-top: var(--padding-16);
+  padding-bottom: var(--padding-16);
+
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.section-content {
+  margin-inline-start: var(--padding-12);
+
+  .subheading {
+    margin-top: var(--padding);
+  }
+}
+
+.subheading {
+  @apply my-4 uppercase text-xs text-secondary font-medium;
+}
